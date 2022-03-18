@@ -41,37 +41,6 @@ p {
     margin-left: -15px;
 }
 
-.projects .col-lg-6:nth-child(1) .project-card {
-    border-left: 7px solid #85CD45;
-}
-
-.projects .col-lg-6:nth-child(2) .project-card {
-    border-left: 7px solid #44A1CD;
-}
-
-.projects .col-lg-6:nth-child(3) .project-card {
-    border-left: 7px solid #ADD9E6;
-}
-
-.projects .col-lg-6:nth-child(4) .project-card {
-    border-left: 7px solid #7830BF;
-}
-
-.projects .col-lg-6:nth-child(5) .project-card {
-    border-left: 7px solid #85CD45;
-}
-
-.projects .col-lg-6:nth-child(6) .project-card {
-    border-left: 7px solid #44A1CD;
-}
-
-.projects .col-lg-6:nth-child(7) .project-card {
-    border-left: 7px solid #ADD9E6;
-}
-
-.projects .col-lg-6:nth-child(8) .project-card {
-    border-left: 7px solid #7830BF;
-}
 
 .projects .project-card h3 {
     font-weight: 580;
@@ -90,42 +59,36 @@ p {
     margin-bottom: 19px;
 }
 
-.projects .col-lg-6:nth-child(1) .project-card a:hover,
-.projects .col-lg-6:nth-child(1) .project-card h3 {
-    color: #85CD45;
+/*alo*/
+.projects .col-lg-6:nth-child(4n+1) .project-card{
+    border-left: 7px solid #afd88a;
 }
 
-.projects .col-lg-6:nth-child(2) .project-card a:hover,
-.projects .col-lg-6:nth-child(2) .project-card h3 {
+.projects .col-lg-6:nth-child(4n+2) .project-card{
+    border-left: 7px solid #44A1CD;
+}
+
+.projects .col-lg-6:nth-child(4n+3) .project-card{
+    border-left: 7px solid #ADD9E6;
+}
+
+.projects .col-lg-6:nth-child(4n+4) .project-card{
+    border-left: 7px solid #bf96e7;
+}
+
+/*alo*/
+.projects .col-lg-6:nth-child(4n+1) .project-card h3 {
+    color: #afd88a;
+}
+
+.projects .col-lg-6:nth-child(4n+2) .project-card h3 {
     color: #44A1CD;
 }
 
-.projects .col-lg-6:nth-child(3) .project-card a:hover,
-.projects .col-lg-6:nth-child(3) .project-card h3 {
+.projects .col-lg-6:nth-child(4n+3) .project-card h3 {
     color: #ADD9E6;
 }
 
-.projects .col-lg-6:nth-child(4) .project-card a:hover,
-.projects .col-lg-6:nth-child(4) .project-card h3 {
-    color: #7830BF;
-}
-
-.projects .col-lg-6:nth-child(5) .project-card a:hover,
-.projects .col-lg-6:nth-child(5) .project-card h3 {
-    color: #7830BF;
-}
-
-.projects .col-lg-6:nth-child(6) .project-card a:hover,
-.projects .col-lg-6:nth-child(6) .project-card h3 {
-    color: #7830BF;
-}
-
-.projects .col-lg-6:nth-child(7) .project-card a:hover,
-.projects .col-lg-6:nth-child(7) .project-card h3 {
-    color: #7830BF;
-}
-
-.projects .col-lg-6:nth-child(8) .project-card a:hover,
-.projects .col-lg-6:nth-child(8) .project-card h3 {
-    color: #7830BF;
+.projects .col-lg-6:nth-child(4n+4) .project-card h3 {
+    color: #bf96e7;
 }
