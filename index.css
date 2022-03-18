@@ -57,6 +57,22 @@ p {
     border-left: 7px solid #7830BF;
 }
 
+.projects .col-lg-6:nth-child(5) .project-card {
+    border-left: 7px solid #85CD45;
+}
+
+.projects .col-lg-6:nth-child(6) .project-card {
+    border-left: 7px solid #44A1CD;
+}
+
+.projects .col-lg-6:nth-child(7) .project-card {
+    border-left: 7px solid #ADD9E6;
+}
+
+.projects .col-lg-6:nth-child(8) .project-card {
+    border-left: 7px solid #7830BF;
+}
+
 .projects .project-card h3 {
     font-weight: 580;
     font-size: 24px;
