@@ -80,22 +80,10 @@ p {
 }
  
 
-.projects .col-lg-6 .project-card-right {
+.projects .col-lg-6 .project-card {
     background: #424242;
     padding: 40px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    position: relative;
-    height: 262px;
-    margin-bottom: 19px;
-    text-align: center 
-}
-
-.projects .col-lg-6 .project-card-left {
-    background: #424242;
-    padding: 40px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 30px;
     position: relative;
     height: 262px;
     margin-bottom: 19px;
