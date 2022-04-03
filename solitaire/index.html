@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Solitaire</title>
-  </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas" width=405 height=720 style="width: 405px; height: 720px; background: #231F20"></canvas>
-    <script src="Build/4.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/4.data",
-        frameworkUrl: "Build/4.framework.js",
-        codeUrl: "Build/4.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Chastoca",
-        productName: "Solitaire",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script>
-  </body>
+<html>
+
+<head>
+    <title>ardaerbaharli</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body class="background">
+
+    <div class="container">
+        <div name="Title">
+            <p class="title col-lg-13">Classic Solitaire</p>
+        </div>
+
+
+        <div class="grid">
+            <img src="1.png" style="--aspect-ratio: 1/1;">
+            <img src="1.png" style="--aspect-ratio: 1/1;">
+            <img src="1.png" style="--aspect-ratio: 1/1;">
+        </div>
+
+
+        <div class="row projects" style="padding-top: 50px;">
+
+            <div class="col-lg-6">
+                <a href="" rel="noopener noreferrer" target="_blank">
+                    <div class="project-card">
+                        <h3>Download Now</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-6">
+                <a href="./play" rel="noopener noreferrer" target="_blank">
+                    <div class="project-card">
+                        <h3>Play</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>
