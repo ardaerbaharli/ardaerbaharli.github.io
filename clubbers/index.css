@@ -63,8 +63,6 @@ p {
 }
 
 
-
-
 .projects .col-lg-6 .project-card h3 {
     /* Center h3 vertical and horizontal */
     margin-top: 50px;
@@ -80,8 +78,7 @@ p {
 .projects .col-lg-6 .project-card {
     background: #424242;
     padding: 40px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 30px;
     position: relative;
     height: 262px;
     margin-bottom: 19px;
