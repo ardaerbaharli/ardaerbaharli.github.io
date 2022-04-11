@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 div div div a {
     text-decoration: none;
 }
@@ -11,24 +15,29 @@ p {
     background-color: #292929;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: start;
+}
+
+.grid>* {
+    background: #424242;
+    width: 100%;
+}
+
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
 }
 
-.storeImg {
-    width: 50%;
-    height: auto;
-}
-
 .title {
     margin-top: 50px;
-    margin-bottom: 50px;
     color: #FFC30B;
     text-align: center;
     font-size: 70px;
-    font-family: pixelOperator;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @font-face {
@@ -56,37 +65,21 @@ p {
     color: #FF2C4D;
 }
 
-.projects-title {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
-}
-
-.project-card img {
-    width: auto;
-    height: 130px;
-}
-
-.projects-title h2 {
-    font-size: 35px;
-    line-height: 45px;
-}
-
-.projects .project-card h3 {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 34px;
-    margin-bottom: 19px;
-}
-
-.projects .project-card {
+.projects .col-lg-6 .project-card {
     background: #424242;
-    padding-top: 60px;
-    padding-left: 131px;
+    padding: 40px;
+    border-radius: 30px;
     position: relative;
     height: 262px;
     margin-bottom: 19px;
-    align-items: center;
+    text-align: center 
+}
+
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+    .image-grid {
+        --num-cols: 2;
+        --row-height: 200px;
+    }
 }
