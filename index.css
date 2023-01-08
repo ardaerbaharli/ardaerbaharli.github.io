@@ -90,6 +90,20 @@ p {
     margin-bottom: 19px;
 }
 
+
+.imgs {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.imgs img {
+    width: 170px;
+    height: 170x;
+}
+
+
 /*alo*/ 
 .projects .col-lg-6:nth-child(4n+1) .project-card{
     border-left: 7px solid #afd88a;
@@ -107,7 +121,7 @@ p {
     border-left: 7px solid #bf96e7;
 }
 
-/*alo*/
+
 .projects .col-lg-6:nth-child(4n+1) .project-card h3 {
     color: #afd88a;
 }
