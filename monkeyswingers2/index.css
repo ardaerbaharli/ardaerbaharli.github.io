@@ -29,7 +29,7 @@ p {
 
 .title {
     margin-top: 30px;
-    color: #040301;
+    color: white;
     text-align: center;
     font-size: 50px;
     font-weight: 408;
@@ -52,7 +52,7 @@ p {
 
 
 .projects .project-card h3 {
-    color: #040301;
+    color: white;
     text-align: center;
     font-size: 40px;
     font-weight: 350;
@@ -61,7 +61,7 @@ p {
  
 
 .projects .project-card {
-    background: #6C7AB7;
+    background: #551F78;
     padding: 40px;
     position: relative;
     height: auto;
@@ -82,7 +82,7 @@ p {
 
 
 .titleCard {
-    background: #6C7AB7;
+    background: #551F78;
     padding: 40px;
     border-top-right-radius: 10px;
     position: relative;
