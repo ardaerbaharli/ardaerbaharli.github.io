@@ -2,22 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>My Portfolio</title>
+    <title>Arda Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="color-scheme" content="light only" />
-    <meta name="description" content="My Portfolio" />
-    <meta property="og:site_name" content="My Portfolio" />
-    <meta property="og:title" content="My Portfolio" />
+    <meta name="description" content="Portfolio of Arda Erbaharlı" />
+    <meta property="og:site_name" content="Abrek Portfolio" />
+    <meta property="og:title" content="Abrek Portfolio" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="My Portfolio" />
-    <meta property="og:image" content="/assets/images/card.jpg?v=ac419f58" />
+    <meta property="og:description" content="Portfolio of Arda Erbaharlı" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="800" />
     <meta property="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="index.html" />
-    <link href="https://fonts.googleapis.com/css?display=swap&family=Roboto:400,400italic%7CInter:400,400italic"
+    <link href="https://fonts.googleapis.com/css?display=swap&family=Montserrat:500,500italic%7CInter:300,300italic"
         rel="stylesheet" type="text/css" />
     <style>
         html,
@@ -186,24 +184,7 @@
             min-width: 320px;
             overflow-x: hidden;
             word-wrap: break-word;
-        }
-
-        body:before {
-            background-attachment: scroll;
-            content: '';
-            display: block;
-            height: var(--background-height);
-            left: 0;
-            pointer-events: none;
-            position: fixed;
-            top: 0;
-            transform: scale(1);
-            width: 100vw;
-            z-index: 0;
-            background-image: radial-gradient(50% 125% at 50% 50%, #A86589 0%, #8257AD 100%);
-            background-position: 0% 0%;
-            background-repeat: repeat;
-            background-size: auto;
+            background-color: #262626;
         }
 
         :root {
@@ -217,7 +198,7 @@
         }
 
         html {
-            font-size: 15pt;
+            font-size: 16pt;
         }
 
         u {
@@ -249,6 +230,21 @@
             background-color: rgba(144, 144, 144, 0.25);
         }
 
+        spoiler-text {
+            -webkit-text-stroke: 0;
+            background-color: rgba(32, 32, 32, 0.75);
+            text-shadow: none;
+            text-stroke: 0;
+            color: transparent;
+            cursor: pointer;
+            transition: color 0.1s ease-in-out;
+        }
+
+        spoiler-text.active {
+            color: #FFFFFF;
+            cursor: text;
+        }
+
         s {
             text-decoration: line-through;
         }
@@ -274,7 +270,7 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             min-height: var(--viewport-height);
             overflow: hidden;
             position: relative;
@@ -282,10 +278,10 @@
         }
 
         #main {
-            --alignment: left;
-            --flex-alignment: flex-start;
+            --alignment: center;
+            --flex-alignment: center;
             --indent-left: 1;
-            --indent-right: 0;
+            --indent-right: 1;
             --border-radius-tl: 0;
             --border-radius-tr: 0;
             --border-radius-br: 0;
@@ -299,13 +295,14 @@
             position: relative;
             text-align: var(--alignment);
             z-index: 1;
+            transition: opacity 0.75s ease-in-out 0s;
         }
 
         #main>.inner {
-            --padding-horizontal: 4rem;
-            --padding-vertical: 5rem;
-            --spacing: 0.375rem;
-            --width: 57rem;
+            --padding-horizontal: 6rem;
+            --padding-vertical: 6rem;
+            --spacing: 1.5rem;
+            --width: 60rem;
             border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
             max-width: 100%;
             position: relative;
@@ -355,6 +352,46 @@
             right: auto;
         }
 
+        body.is-loading #main {
+            opacity: 0;
+        }
+
+        body #wrapper:after {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            display: block;
+            height: 4.5rem;
+            left: calc(50% - 2.25rem);
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            top: calc(50% - 2.25rem);
+            transition: opacity 1s ease, visibility 1s;
+            visibility: hidden;
+            width: 4.5rem;
+            z-index: 100000;
+        }
+
+        body.is-loading {
+            pointer-events: none;
+        }
+
+        body.is-loading.with-loader #wrapper:after {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOTZweCIgaGVpZ2h0PSI5NnB4IiB2aWV3Qm94PSIwIDAgOTYgOTYiIHpvb21BbmRQYW49ImRpc2FibGUiPjxzdHlsZT5jaXJjbGUge2ZpbGw6IHRyYW5zcGFyZW50O3N0cm9rZS13aWR0aDogNnB4O3N0cm9rZTogI0JEQkRCRDt9PC9zdHlsZT48ZGVmcz48Y2xpcFBhdGggaWQ9ImNvcm5lciI+PHBvbHlnb24gcG9pbnRzPSI0OCwwIDk2LDAgOTYsNDggNDgsNDgiIC8+PC9jbGlwUGF0aD48L2RlZnM+PGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iMzIiIG9wYWNpdHk9IjAuMzc1IiAvPjxnIGNsaXAtcGF0aD0idXJsKCNjb3JuZXIpIj48Y2lyY2xlIGN4PSI0OCIgY3k9IjQ4IiByPSIzMiIgLz48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIGF0dHJpYnV0ZVR5cGU9IlhNTCIgdHlwZT0icm90YXRlIiBmcm9tPSIwIDQ4IDQ4IiB0bz0iMzYwIDQ4IDQ4IiBkdXI9IjFzIiByZXBlYXREdXI9ImluZGVmaW5pdGUiIC8+PC9nPjwvc3ZnPg==');
+            opacity: 1;
+            transform: scale(1.0);
+            visibility: visible;
+        }
+
+        body.is-playing.with-loader #wrapper:after {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.25s ease, transform 0.75s ease, visibility 0.25s;
+            visibility: hidden;
+        }
+
         body.is-instant #main,
         body.is-instant #main>.inner>*,
         body.is-instant #main>.inner>section>* {
@@ -364,6 +401,91 @@
         body.is-instant:after {
             display: none !important;
             transition: none !important;
+        }
+
+        .icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: var(--flex-alignment);
+            letter-spacing: 0;
+            padding: 0;
+        }
+
+        .icons li {
+            position: relative;
+            z-index: 1;
+        }
+
+        .icons li a {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .icons li a svg {
+            display: block;
+            position: relative;
+        }
+
+        .icons li a+svg {
+            display: block;
+            height: 100%;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .icons li a .label {
+            display: none;
+        }
+
+        .icons.style1 {
+            font-size: 1.75em;
+            gap: 1.5rem;
+        }
+
+        .icons.style1:not(:first-child) {
+            margin-top: 2.25rem !important;
+        }
+
+        .icons.style1:not(:last-child) {
+            margin-bottom: 2.25rem !important;
+        }
+
+        .icons.style1 li a {
+            border-radius: 100%;
+            height: 2em;
+            width: 2em;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .icons.style1 li a svg {
+            height: 60%;
+            width: 60%;
+            transition: fill 0.25s ease;
+        }
+
+        .icons.style1 a {
+            background-color: #333333;
+        }
+
+        .icons.style1 a svg {
+            fill: #FFFFFF;
+        }
+
+        .icons.style1 li a+svg {
+            transition: transform 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+        }
+
+        .icons.style1 li a:hover {
+            transform: scale(1.06);
+        }
+
+        .icons.style1 li a:hover+svg {
+            transform: scale(1.06);
         }
 
         h1,
@@ -401,7 +523,11 @@
         h1 mark,
         h2 mark,
         h3 mark,
-        p mark {
+        p mark,
+        h1 spoiler-text,
+        h2 spoiler-text,
+        h3 spoiler-text,
+        p spoiler-text {
             -webkit-text-fill-color: currentcolor;
         }
 
@@ -409,11 +535,21 @@
         h2.style4,
         h3.style4,
         p.style4 {
-            color: #FFFFFF;
-            font-family: 'Roboto', sans-serif;
-            font-size: 4em;
-            line-height: 1.125;
-            font-weight: 400;
+            color: #333333;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.025rem;
+            width: 100%;
+            font-size: 1.5em;
+            line-height: 1.25;
+            font-weight: 500;
+        }
+
+        h1.style4 mark,
+        h2.style4 mark,
+        h3.style4 mark,
+        p.style4 mark {
+            color: #637185;
+            background-color: transparent;
         }
 
         h1.style4 a,
@@ -437,72 +573,40 @@
             margin-top: 1rem;
         }
 
-        h1.style3,
-        h2.style3,
-        h3.style3,
-        p.style3 {
-            color: #85838F;
-            font-family: 'Roboto', sans-serif;
-            letter-spacing: 0.025rem;
-            width: calc(100% + 0.025rem);
-            font-size: 1em;
-            line-height: 1.75;
-            font-weight: 400;
-        }
-
-        h1.style3 mark,
-        h2.style3 mark,
-        h3.style3 mark,
-        p.style3 mark {
-            color: #D4AF37;
-            background-color: transparent;
-        }
-
-        h1.style3 a,
-        h2.style3 a,
-        h3.style3 a,
-        p.style3 a {
-            color: #5C83EE;
-            text-decoration: none;
-        }
-
-        h1.style3 a:hover,
-        h2.style3 a:hover,
-        h3.style3 a:hover,
-        p.style3 a:hover {
-            color: #10182F;
-        }
-
-        h1.style3 span.p:nth-child(n + 2),
-        h2.style3 span.p:nth-child(n + 2),
-        h3.style3 span.p:nth-child(n + 2),
-        p.style3 span.p:nth-child(n + 2) {
-            margin-top: 1rem;
-        }
-
         h1.style1,
         h2.style1,
         h3.style1,
         p.style1 {
+            color: #EBEBEB;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.025rem;
+            width: calc(100% + 0.025rem);
+            font-size: 1em;
+            line-height: 1.875;
+            font-weight: 300;
+        }
+
+        h1.style1 mark,
+        h2.style1 mark,
+        h3.style1 mark,
+        p.style1 mark {
             color: #FFFFFF;
-            font-family: 'Roboto', sans-serif;
-            font-size: 2em;
-            line-height: 1.375;
-            font-weight: 400;
+            background-color: transparent;
         }
 
         h1.style1 a,
         h2.style1 a,
         h3.style1 a,
         p.style1 a {
-            text-decoration: none;
+            color: #8195DE;
+            text-decoration: underline;
         }
 
         h1.style1 a:hover,
         h2.style1 a:hover,
         h3.style1 a:hover,
         p.style1 a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
 
         h1.style1 span.p:nth-child(n + 2),
@@ -512,83 +616,103 @@
             margin-top: 1rem;
         }
 
-        .buttons {
-            cursor: default;
-            display: flex;
-            justify-content: var(--flex-alignment);
-            letter-spacing: 0;
-            padding: 0;
+        h1.style5,
+        h2.style5,
+        h3.style5,
+        p.style5 {
+            color: #EBEBEB;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.05rem;
+            width: 100%;
+            font-size: 3em;
+            line-height: 1.375;
+            font-weight: 500;
         }
 
-        .buttons li {
-            max-width: 100%;
+        h1.style5 mark,
+        h2.style5 mark,
+        h3.style5 mark,
+        p.style5 mark {
+            color: #637185;
+            background-color: transparent;
         }
 
-        .buttons li a {
-            align-items: center;
-            justify-content: center;
-            max-width: 100%;
-            text-align: center;
+        h1.style5 a,
+        h2.style5 a,
+        h3.style5 a,
+        p.style5 a {
             text-decoration: none;
-            vertical-align: middle;
-            white-space: nowrap;
         }
 
-        .buttons.style1 {
-            gap: 0.5rem;
-            flex-direction: row;
-            flex-wrap: wrap;
+        h1.style5 a:hover,
+        h2.style5 a:hover,
+        h3.style5 a:hover,
+        p.style5 a:hover {
+            text-decoration: underline;
         }
 
-        .buttons.style1:not(:first-child) {
-            margin-top: 2.25rem !important;
+        h1.style5 span.p:nth-child(n + 2),
+        h2.style5 span.p:nth-child(n + 2),
+        h3.style5 span.p:nth-child(n + 2),
+        p.style5 span.p:nth-child(n + 2) {
+            margin-top: 1rem;
         }
 
-        .buttons.style1:not(:last-child) {
-            margin-bottom: 2.25rem !important;
-        }
-
-        .buttons.style1 li a {
-            display: inline-flex;
-            width: auto;
-            height: 4rem;
-            line-height: 4rem;
-            padding: 0 2rem;
-            vertical-align: middle;
-            font-family: 'Inter', sans-serif;
-            font-size: 1em;
-            font-weight: 400;
-            border-radius: 0.75rem;
-            flex-direction: row-reverse;
-            transition: transform 0.375s ease, color 0.375s ease, background-color 0.375s ease, border-color 0.375s ease;
-        }
-
-        .buttons.style1 li a svg {
+        .image {
             display: block;
-            fill: #FFFFFF;
-            flex-grow: 0;
-            flex-shrink: 0;
-            height: 100%;
-            min-width: 16px;
-            width: 1.125em;
-            margin-left: 1rem;
-            margin-right: calc(-0.125em + 0rem);
-            transition: fill 0.375s ease;
+            line-height: 0;
+            max-width: 100%;
+            position: relative;
         }
 
-        .buttons.style1 li a .label {
-            direction: var(--site-language-direction);
+        .image .frame {
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            display: inline-block;
+            max-width: 100%;
             overflow: hidden;
-            text-overflow: ellipsis;
+            vertical-align: top;
+            width: 100%;
         }
 
-        .buttons.style1 .button {
-            background-color: #7E55F2;
-            color: #FFFFFF;
+        .image .frame img {
+            border-radius: 0 !important;
+            max-width: 100%;
+            vertical-align: top;
+            width: inherit;
         }
 
-        .buttons.style1 li a:hover {
-            transform: scale(1.0425);
+        .image.full .frame {
+            display: block;
+        }
+
+        .image.full:first-child .frame {
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+        }
+
+        .image.full:last-child .frame {
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit;
+        }
+
+        .image.style3 .frame {
+            width: 100vw;
+            border-radius: 100%;
+            border-color: #EDEDED;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 0rem 0.625rem 1.5rem 0rem rgba(0, 0, 0, 0.051);
+            transition: none;
+        }
+
+        .image.style3 img {
+            border-radius: inherit !important;
+            padding: 0.375rem;
+        }
+
+        .image.style3 .frame img {
+            transition: none;
         }
 
         .container {
@@ -630,172 +754,25 @@
             border-bottom-right-radius: inherit;
         }
 
-        .container.style1 {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            background-image: radial-gradient(75% 75% at 100% 100%, #3D394D 0%, #2D2B36 100%);
-            background-position: 0% 0%;
-            background-repeat: repeat;
-            background-size: cover;
-        }
-
-        .container.style1:not(:last-child) {
-            margin-bottom: 2.25rem !important;
-        }
-
-        .container.style1>.wrapper>.inner {
-            --gutters: calc(var(--padding-horizontal) * 2);
-            --padding-vertical: 3.5rem;
-            padding: var(--padding-vertical) var(--padding-horizontal);
-        }
-
-        .container.style1>.wrapper {
-            max-width: var(--width);
-            width: 100%;
-        }
-
-        .container.style1.default>.wrapper>.inner>* {
-            margin-bottom: var(--spacing);
-            margin-top: var(--spacing);
-        }
-
-        .container.style1.default>.wrapper>.inner>*:first-child {
-            margin-top: 0 !important;
-        }
-
-        .container.style1.default>.wrapper>.inner>*:last-child {
-            margin-bottom: 0 !important;
-        }
-
-        .container.style1.columns>.wrapper>.inner {
-            flex-wrap: wrap;
-            display: flex;
-            align-items: center;
-        }
-
-        .container.style1.columns>.wrapper>.inner>* {
-            flex-grow: 0;
-            flex-shrink: 0;
-            max-width: 100%;
-            text-align: var(--alignment);
-            padding: 0 0 0 var(--gutters);
-        }
-
-        .container.style1.columns>.wrapper>.inner>*>* {
-            margin-bottom: var(--spacing);
-            margin-top: var(--spacing);
-        }
-
-        .container.style1.columns>.wrapper>.inner>*>*:first-child {
-            margin-top: 0 !important;
-        }
-
-        .container.style1.columns>.wrapper>.inner>*>*:last-child {
-            margin-bottom: 0 !important;
-        }
-
-        .container.style1.columns>.wrapper>.inner>*:first-child {
-            margin-left: calc(var(--gutters) * -1);
-        }
-
-        .container.style1.default>.wrapper>.inner>.full {
-            margin-left: calc(var(--padding-horizontal) * -1);
-            max-width: none !important;
-            width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
-        }
-
-        .container.style1.default>.wrapper>.inner>.full:first-child {
-            margin-top: calc(var(--padding-vertical) * -1) !important;
-            border-top-left-radius: inherit;
-            border-top-right-radius: inherit;
-        }
-
-        .container.style1.default>.wrapper>.inner>.full:last-child {
-            margin-bottom: calc(var(--padding-vertical) * -1) !important;
-            border-bottom-left-radius: inherit;
-            border-bottom-right-radius: inherit;
-        }
-
-        .container.style1.columns>.wrapper>.inner>div>.full {
-            margin-left: calc(var(--gutters) * -0.5);
-            max-width: none !important;
-            width: calc(100% + var(--gutters) + 0.4725px);
-        }
-
-        .container.style1.columns>.wrapper>.inner>div:first-child>.full {
-            margin-left: calc(var(--padding-horizontal) * -1);
-            width: calc(100% + var(--padding-horizontal) + calc(var(--gutters) * 0.5) + 0.4725px);
-        }
-
-        .container.style1.columns>.wrapper>.inner>div:last-child>.full {
-            width: calc(100% + var(--padding-horizontal) + calc(var(--gutters) * 0.5) + 0.4725px);
-        }
-
-        .container.style1.columns>.wrapper>.inner>div>.full:first-child {
-            margin-top: calc(var(--padding-vertical) * -1) !important;
-        }
-
-        .container.style1.columns>.wrapper>.inner>div>.full:last-child {
-            margin-bottom: calc(var(--padding-vertical) * -1) !important;
-        }
-
-        .container.style1.columns>.wrapper>.inner>.full {
-            align-self: stretch;
-        }
-
-        .container.style1.columns>.wrapper>.inner>.full:first-child {
-            border-bottom-left-radius: inherit;
-            border-top-left-radius: inherit;
-        }
-
-        .container.style1.columns>.wrapper>.inner>.full:last-child {
-            border-bottom-right-radius: inherit;
-            border-top-right-radius: inherit;
-        }
-
-        .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child {
-            border-radius: inherit;
-            height: calc(100% + (var(--padding-vertical) * 2));
-        }
-
-        .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child>* {
-            border-radius: inherit;
-            height: 100%;
-            position: absolute;
-            width: 100%;
-        }
-
-        .container.style2 {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            background-image: radial-gradient(40% 100% at 50% 100%, #3D394D 0%, #2D2B36 100%);
-            background-position: 0% 0%;
-            background-repeat: repeat;
-            background-size: cover;
-            box-shadow: 0rem 0.75rem 2.25rem 0rem rgba(0, 0, 0, 0.2);
-            border-radius: 1.25rem;
-        }
-
         .container.style2:not(:first-child) {
-            margin-top: 6rem !important;
+            margin-top: 5rem !important;
         }
 
         .container.style2:not(:last-child) {
-            margin-bottom: 6rem !important;
-        }
-
-        .container.style2>.wrapper>.inner {
-            --gutters: calc(var(--padding-horizontal) * 2);
-            padding: var(--padding-vertical) var(--padding-horizontal);
+            margin-bottom: 5rem !important;
         }
 
         .container.style2>.wrapper {
-            max-width: 100%;
-            width: 100%;
+            display: inline-block;
+            width: 30rem;
+            background-color: transparent;
+        }
+
+        .container.style2>.wrapper>.inner {
+            --gutters: 2.5rem;
+            --padding-horizontal: 0rem;
+            --padding-vertical: 0rem;
+            padding: var(--padding-vertical) var(--padding-horizontal);
         }
 
         .container.style2.default>.wrapper>.inner>* {
@@ -909,148 +886,230 @@
             width: 100%;
         }
 
-        #container01>.wrapper>.inner> :nth-child(1) {
-            width: calc(50% + (var(--gutters) / 2));
+        .container.style1 {
+            --alignment: left;
+            --flex-alignment: flex-start;
+            --indent-left: 1;
+            --indent-right: 0;
         }
 
-        #container01>.wrapper>.inner> :nth-child(2) {
-            width: calc(50% + (var(--gutters) / 2));
+        .container.style1:not(:first-child) {
+            margin-top: 1.5rem !important;
         }
 
-        #container03>.wrapper>.inner> :nth-child(1) {
-            width: calc(50% + (var(--gutters) / 2));
+        .container.style1:not(:last-child) {
+            margin-bottom: 1.5rem !important;
         }
 
-        #container03>.wrapper>.inner> :nth-child(2) {
-            width: calc(50% + (var(--gutters) / 2));
-        }
-
-        .image {
-            display: block;
-            line-height: 0;
-            max-width: 100%;
-            position: relative;
-        }
-
-        .image .frame {
-            -webkit-backface-visibility: hidden;
-            -webkit-transform: translate3d(0, 0, 0);
+        .container.style1>.wrapper {
             display: inline-block;
+            width: 76rem;
+            background-color: #68567A;
+            border-color: #EDEDED;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 0rem 0.5rem 1.75rem 0.125rem rgba(0, 0, 0, 0.043);
+            border-radius: 1.5rem;
+        }
+
+        .container.style1>.wrapper>.inner {
+            --gutters: 2.5rem;
+            --padding-horizontal: 3rem;
+            --padding-vertical: 3rem;
+            --spacing: 1rem;
+            padding: var(--padding-vertical) var(--padding-horizontal);
+            border-radius: calc(1.5rem - 1px);
+        }
+
+        .container.style1.default>.wrapper>.inner>* {
+            margin-bottom: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        .container.style1.default>.wrapper>.inner>*:first-child {
+            margin-top: 0 !important;
+        }
+
+        .container.style1.default>.wrapper>.inner>*:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .container.style1.columns>.wrapper>.inner {
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+        }
+
+        .container.style1.columns>.wrapper>.inner>* {
+            flex-grow: 0;
+            flex-shrink: 0;
             max-width: 100%;
-            overflow: hidden;
-            vertical-align: top;
-            width: 100%;
+            text-align: var(--alignment);
+            padding: 0 0 0 var(--gutters);
         }
 
-        .image .frame img {
-            border-radius: 0 !important;
-            max-width: 100%;
-            vertical-align: top;
-            width: inherit;
+        .container.style1.columns>.wrapper>.inner>*>* {
+            margin-bottom: var(--spacing);
+            margin-top: var(--spacing);
         }
 
-        .image.full .frame {
-            display: block;
+        .container.style1.columns>.wrapper>.inner>*>*:first-child {
+            margin-top: 0 !important;
         }
 
-        .image.full:first-child .frame {
+        .container.style1.columns>.wrapper>.inner>*>*:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .container.style1.columns>.wrapper>.inner>*:first-child {
+            margin-left: calc(var(--gutters) * -1);
+        }
+
+        .container.style1.default>.wrapper>.inner>.full {
+            margin-left: calc(var(--padding-horizontal) * -1);
+            max-width: none !important;
+            width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
+        }
+
+        .container.style1.default>.wrapper>.inner>.full:first-child {
+            margin-top: calc(var(--padding-vertical) * -1) !important;
             border-top-left-radius: inherit;
             border-top-right-radius: inherit;
         }
 
-        .image.full:last-child .frame {
+        .container.style1.default>.wrapper>.inner>.full:last-child {
+            margin-bottom: calc(var(--padding-vertical) * -1) !important;
             border-bottom-left-radius: inherit;
             border-bottom-right-radius: inherit;
         }
 
-        .image.style1 .frame {
-            width: 100vw;
-            transition: none;
+        .container.style1.columns>.wrapper>.inner>div>.full {
+            margin-left: calc(var(--gutters) * -0.5);
+            max-width: none !important;
+            width: calc(100% + var(--gutters) + 0.4725px);
         }
 
-        .image.style1 .frame img {
-            transition: none;
+        .container.style1.columns>.wrapper>.inner>div:first-child>.full {
+            margin-left: calc(var(--padding-horizontal) * -1);
+            width: calc(100% + var(--padding-horizontal) + calc(var(--gutters) * 0.5) + 0.4725px);
         }
 
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: var(--flex-alignment);
-            letter-spacing: 0;
-            padding: 0;
+        .container.style1.columns>.wrapper>.inner>div:last-child>.full {
+            width: calc(100% + var(--padding-horizontal) + calc(var(--gutters) * 0.5) + 0.4725px);
         }
 
-        .icons li {
-            position: relative;
-            z-index: 1;
+        .container.style1.columns>.wrapper>.inner>div>.full:first-child {
+            margin-top: calc(var(--padding-vertical) * -1) !important;
         }
 
-        .icons li a {
-            align-items: center;
-            display: flex;
-            justify-content: center;
+        .container.style1.columns>.wrapper>.inner>div>.full:last-child {
+            margin-bottom: calc(var(--padding-vertical) * -1) !important;
         }
 
-        .icons li a svg {
-            display: block;
-            position: relative;
+        .container.style1.columns>.wrapper>.inner>.full {
+            align-self: stretch;
         }
 
-        .icons li a+svg {
-            display: block;
+        .container.style1.columns>.wrapper>.inner>.full:first-child {
+            border-bottom-left-radius: inherit;
+            border-top-left-radius: inherit;
+        }
+
+        .container.style1.columns>.wrapper>.inner>.full:last-child {
+            border-bottom-right-radius: inherit;
+            border-top-right-radius: inherit;
+        }
+
+        .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child {
+            border-radius: inherit;
+            height: calc(100% + (var(--padding-vertical) * 2));
+        }
+
+        .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child>* {
+            border-radius: inherit;
             height: 100%;
-            left: 0;
-            pointer-events: none;
             position: absolute;
-            top: 0;
             width: 100%;
-            z-index: -1;
         }
 
-        .icons li a .label {
-            display: none;
+        #container03>.wrapper>.inner> :nth-child(1) {
+            width: calc(25% + (var(--gutters) / 3));
         }
 
-        .icons.style1 {
-            font-size: 2em;
-            gap: 1.5rem;
+        #container03>.wrapper>.inner> :nth-child(2) {
+            width: calc(54% + (var(--gutters) / 3));
         }
 
-        .icons.style1:not(:first-child) {
-            margin-top: 2.5rem !important;
+        #container03>.wrapper>.inner> :nth-child(3) {
+            width: calc(21% + (var(--gutters) / 3));
+            --alignment: right;
+            --flex-alignment: flex-end;
+            --indent-left: 0;
+            --indent-right: 1;
         }
 
-        .icons.style1:not(:last-child) {
-            margin-bottom: 2.5rem !important;
+        #container04>.wrapper>.inner> :nth-child(1) {
+            width: calc(25% + (var(--gutters) / 3));
         }
 
-        .icons.style1 li a {
-            border-radius: 100%;
-            height: 1em;
-            width: 1em;
-            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        #container04>.wrapper>.inner> :nth-child(2) {
+            width: calc(54% + (var(--gutters) / 3));
         }
 
-        .icons.style1 li a svg {
-            height: 100%;
-            width: 100%;
-            transition: fill 0.25s ease;
+        #container04>.wrapper>.inner> :nth-child(3) {
+            width: calc(21% + (var(--gutters) / 3));
+            --alignment: right;
+            --flex-alignment: flex-end;
+            --indent-left: 0;
+            --indent-right: 1;
         }
 
-        .icons.style1 a svg {
-            fill: #FFFFFF;
+        #container01>.wrapper>.inner> :nth-child(1) {
+            width: calc(25% + (var(--gutters) / 3));
         }
 
-        .icons.style1 li a+svg {
-            transition: transform 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+        #container01>.wrapper>.inner> :nth-child(2) {
+            width: calc(54% + (var(--gutters) / 3));
         }
 
-        .icons.style1 li a:hover {
-            transform: scale(1.2);
+        #container01>.wrapper>.inner> :nth-child(3) {
+            width: calc(21% + (var(--gutters) / 3));
+            --alignment: right;
+            --flex-alignment: flex-end;
+            --indent-left: 0;
+            --indent-right: 1;
         }
 
-        .icons.style1 li a:hover+svg {
-            transform: scale(1.2);
+        #container05>.wrapper>.inner> :nth-child(1) {
+            width: calc(25% + (var(--gutters) / 3));
+        }
+
+        #container05>.wrapper>.inner> :nth-child(2) {
+            width: calc(54% + (var(--gutters) / 3));
+        }
+
+        #container05>.wrapper>.inner> :nth-child(3) {
+            width: calc(21% + (var(--gutters) / 3));
+            --alignment: right;
+            --flex-alignment: flex-end;
+            --indent-left: 0;
+            --indent-right: 1;
+        }
+
+        #container02>.wrapper>.inner> :nth-child(1) {
+            width: calc(25% + (var(--gutters) / 3));
+        }
+
+        #container02>.wrapper>.inner> :nth-child(2) {
+            width: calc(54% + (var(--gutters) / 3));
+        }
+
+        #container02>.wrapper>.inner> :nth-child(3) {
+            width: calc(21% + (var(--gutters) / 3));
+            --alignment: right;
+            --flex-alignment: flex-end;
+            --indent-left: 0;
+            --indent-right: 1;
         }
 
         .icc-credits {
@@ -1133,21 +1192,21 @@
         }
 
         #credits span {
-            color: rgba(10, 6, 8, 0.498);
-            margin-top: 0.375rem !important;
+            color: rgba(235, 235, 235, 0.498);
+            margin-top: 1.5rem !important;
         }
 
         @media (max-width: 1920px) {}
 
         @media (max-width: 1680px) {
             html {
-                font-size: 11pt;
+                font-size: 12pt;
             }
         }
 
         @media (max-width: 1280px) {
             html {
-                font-size: 11pt;
+                font-size: 12pt;
             }
         }
 
@@ -1155,7 +1214,7 @@
 
         @media (max-width: 980px) {
             html {
-                font-size: 9pt;
+                font-size: 10pt;
             }
         }
 
@@ -1165,174 +1224,70 @@
             }
 
             #main>.inner {
-                --padding-horizontal: 2rem;
+                --padding-horizontal: 1.5rem;
                 --padding-vertical: 3rem;
-                --spacing: 0.375rem;
+                --spacing: 1.5rem;
+            }
+
+            .icons.style1 {
+                font-size: 1.75em;
+                gap: 1.5rem;
+            }
+
+            .icons.style1:not(:first-child) {
+                margin-top: 1.6875rem !important;
+            }
+
+            .icons.style1:not(:last-child) {
+                margin-bottom: 1.6875rem !important;
             }
 
             h1.style4,
             h2.style4,
             h3.style4,
             p.style4 {
-                letter-spacing: 0rem;
+                letter-spacing: -0.021875rem;
                 width: 100%;
-                font-size: 2.5em;
-                line-height: 1.125;
-            }
-
-            h1.style3,
-            h2.style3,
-            h3.style3,
-            p.style3 {
-                letter-spacing: 0.021875rem;
-                width: calc(100% + 0.021875rem);
-                font-size: 1em;
-                line-height: 1.75;
+                font-size: 1.75em;
+                line-height: 1.25;
             }
 
             h1.style1,
             h2.style1,
             h3.style1,
             p.style1 {
-                letter-spacing: 0rem;
-                width: 100%;
-                font-size: 1.625em;
-                line-height: 1.5;
-            }
-
-            .buttons.style1 {
-                gap: 0.5rem;
-            }
-
-            .buttons.style1:not(:first-child) {
-                margin-top: 1.6875rem !important;
-            }
-
-            .buttons.style1:not(:last-child) {
-                margin-bottom: 1.6875rem !important;
-            }
-
-            .buttons.style1 li a {
-                letter-spacing: 0rem;
+                letter-spacing: 0.021875rem;
+                width: calc(100% + 0.021875rem);
                 font-size: 1em;
+                line-height: 1.875;
             }
 
-            .buttons.style1 li a svg {
-                width: 1.125em;
+            h1.style5,
+            h2.style5,
+            h3.style5,
+            p.style5 {
+                letter-spacing: -0.04375rem;
+                width: 100%;
+                font-size: 2.5em;
+                line-height: 1.375;
             }
 
-            .container.style1:not(:first-child) {
-                margin-top: 2rem !important;
-            }
-
-            .container.style1:not(:last-child) {
-                margin-bottom: 2rem !important;
-            }
-
-            .container.style1>.wrapper>.inner {
-                --gutters: calc(var(--padding-vertical) * 2);
-                --padding-horizontal: 2rem;
-                --padding-vertical: 4rem;
-            }
-
-            .container.style1.columns>.wrapper>.inner {
-                flex-direction: column !important;
-                flex-wrap: nowrap !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>span {
-                height: 0;
-                margin-top: calc(var(--gutters) * -1);
-                pointer-events: none;
-                visibility: hidden;
-            }
-
-            .container.style1.columns>.wrapper>.inner>*:first-child {
-                margin-left: 0 !important;
-                padding-top: 0 !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>* {
-                padding: calc(var(--gutters) * 0.5) 0 !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>*:last-child {
-                padding-bottom: 0 !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div>.full {
-                margin-left: calc(var(--padding-horizontal) * -1);
-                width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full {
-                margin-left: calc(var(--padding-horizontal) * -1);
-                width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full {
-                margin-left: calc(var(--padding-horizontal) * -1);
-                width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
-            }
-
-            .container.style1.columns>.wrapper>.inner>div>.full:first-child {
-                margin-top: calc(var(--gutters) * -0.5) !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div>.full:last-child {
-                margin-bottom: calc(var(--gutters) * -0.5) !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full:first-child {
-                margin-top: calc(var(--padding-vertical) * -1) !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full:last-child {
-                margin-bottom: calc(var(--padding-vertical) * -1) !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:first-of-type,
-            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full:first-child {
-                border-top-left-radius: inherit;
-                border-top-right-radius: inherit;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:last-of-type,
-            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full:last-child {
-                border-bottom-left-radius: inherit;
-                border-bottom-right-radius: inherit;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:first-of-type,
-            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full:last-child {
-                border-bottom-left-radius: 0 !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>div:last-of-type,
-            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full:first-child {
-                border-top-right-radius: 0 !important;
-            }
-
-            .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child {
-                height: auto;
-            }
-
-            .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child>* {
-                height: auto;
-                position: relative;
-                width: auto;
+            .image.style3 .frame {
+                width: 8rem;
             }
 
             .container.style2:not(:first-child) {
-                margin-top: 2rem !important;
+                margin-top: 2.625rem !important;
             }
 
             .container.style2:not(:last-child) {
-                margin-bottom: 2rem !important;
+                margin-bottom: 2.625rem !important;
             }
 
             .container.style2>.wrapper>.inner {
-                --gutters: 5rem;
+                --gutters: 2.5rem;
+                --padding-horizontal: 0rem;
+                --padding-vertical: 0rem;
             }
 
             .container.style2.columns>.wrapper>.inner {
@@ -1423,716 +1378,527 @@
                 width: auto;
             }
 
-            #container01>.wrapper>.inner> :nth-child(1) {
-                min-height: 100% !important;
-                width: 100% !important;
+            .container.style1 {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
             }
 
-            #container01>.wrapper>.inner> :nth-child(2) {
-                min-height: 100% !important;
-                width: 100% !important;
+            .container.style1:not(:first-child) {
+                margin-top: 1.5rem !important;
+            }
+
+            .container.style1:not(:last-child) {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .container.style1>.wrapper>.inner {
+                --gutters: 2.5rem;
+                --padding-horizontal: 1.5rem;
+                --padding-vertical: 3rem;
+                --spacing: 1rem;
+            }
+
+            .container.style1.columns>.wrapper>.inner {
+                flex-direction: column !important;
+                flex-wrap: nowrap !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>span {
+                height: 0;
+                margin-top: calc(var(--gutters) * -1);
+                pointer-events: none;
+                visibility: hidden;
+            }
+
+            .container.style1.columns>.wrapper>.inner>*:first-child {
+                margin-left: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>* {
+                padding: calc(var(--gutters) * 0.5) 0 !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>*:last-child {
+                padding-bottom: 0 !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div>.full {
+                margin-left: calc(var(--padding-horizontal) * -1);
+                width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full {
+                margin-left: calc(var(--padding-horizontal) * -1);
+                width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full {
+                margin-left: calc(var(--padding-horizontal) * -1);
+                width: calc(100% + (var(--padding-horizontal) * 2) + 0.4725px);
+            }
+
+            .container.style1.columns>.wrapper>.inner>div>.full:first-child {
+                margin-top: calc(var(--gutters) * -0.5) !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div>.full:last-child {
+                margin-bottom: calc(var(--gutters) * -0.5) !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full:first-child {
+                margin-top: calc(var(--padding-vertical) * -1) !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full:last-child {
+                margin-bottom: calc(var(--padding-vertical) * -1) !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:first-of-type,
+            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full:first-child {
+                border-top-left-radius: inherit;
+                border-top-right-radius: inherit;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:last-of-type,
+            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full:last-child {
+                border-bottom-left-radius: inherit;
+                border-bottom-right-radius: inherit;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:first-of-type,
+            .container.style1.columns>.wrapper>.inner>div:first-of-type>.full:last-child {
+                border-bottom-left-radius: 0 !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>div:last-of-type,
+            .container.style1.columns>.wrapper>.inner>div:last-of-type>.full:first-child {
+                border-top-right-radius: 0 !important;
+            }
+
+            .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child {
+                height: auto;
+            }
+
+            .container.style1.columns>.wrapper>.inner>.full>.full:first-child:last-child>* {
+                height: auto;
+                position: relative;
+                width: auto;
             }
 
             #container03>.wrapper>.inner> :nth-child(1) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
                 min-height: 100% !important;
                 width: 100% !important;
             }
 
             #container03>.wrapper>.inner> :nth-child(2) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
                 min-height: 100% !important;
                 width: 100% !important;
             }
 
-            .icons.style1 {
-                font-size: 2em;
-                gap: 1.5rem;
+            #container03>.wrapper>.inner> :nth-child(3) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
             }
 
-            .icons.style1:not(:first-child) {
-                margin-top: 1.875rem !important;
+            #container04>.wrapper>.inner> :nth-child(1) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
             }
 
-            .icons.style1:not(:last-child) {
-                margin-bottom: 1.875rem !important;
+            #container04>.wrapper>.inner> :nth-child(2) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container04>.wrapper>.inner> :nth-child(3) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container01>.wrapper>.inner> :nth-child(1) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container01>.wrapper>.inner> :nth-child(2) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container01>.wrapper>.inner> :nth-child(3) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container05>.wrapper>.inner> :nth-child(1) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container05>.wrapper>.inner> :nth-child(2) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container05>.wrapper>.inner> :nth-child(3) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container02>.wrapper>.inner> :nth-child(1) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container02>.wrapper>.inner> :nth-child(2) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
+            }
+
+            #container02>.wrapper>.inner> :nth-child(3) {
+                --alignment: center;
+                --flex-alignment: center;
+                --indent-left: 1;
+                --indent-right: 1;
+                min-height: 100% !important;
+                width: 100% !important;
             }
         }
 
         @media (max-width: 480px) {
             #main>.inner {
-                --spacing: 0.328125rem;
+                --spacing: 1.3125rem;
             }
 
-            .buttons.style1 {
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
-
-            .buttons.style1 li a {
-                max-width: 32rem;
-                width: 100%;
+            .container.style1>.wrapper>.inner {
+                --spacing: 0.875rem;
             }
         }
 
         @media (max-width: 360px) {
             #main>.inner {
-                --padding-horizontal: 1.5rem;
+                --padding-horizontal: 1.125rem;
                 --padding-vertical: 2.25rem;
-                --spacing: 0.28125rem;
+                --spacing: 1.125rem;
+            }
+
+            .icons.style1 {
+                gap: 1.125rem;
             }
 
             h1.style4,
             h2.style4,
             h3.style4,
             p.style4 {
-                font-size: 2.5em;
-            }
-
-            h1.style3,
-            h2.style3,
-            h3.style3,
-            p.style3 {
-                font-size: 1em;
+                font-size: 1.75em;
             }
 
             h1.style1,
             h2.style1,
             h3.style1,
             p.style1 {
-                font-size: 1.625em;
+                font-size: 1em;
             }
 
-            .buttons.style1 {
-                gap: 0.375rem;
-            }
-
-            .container.style1>.wrapper>.inner {
-                --gutters: calc(var(--padding-vertical) * 2);
-                --padding-horizontal: 1.5rem;
-                --padding-vertical: 3rem;
+            h1.style5,
+            h2.style5,
+            h3.style5,
+            p.style5 {
+                font-size: 2.5em;
             }
 
             .container.style2>.wrapper>.inner {
-                --gutters: 5rem;
+                --gutters: 1.875rem;
+                --padding-horizontal: 0rem;
+                --padding-vertical: 0rem;
             }
 
-            .icons.style1 {
-                gap: 1.125rem;
+            .container.style1>.wrapper>.inner {
+                --gutters: 1.875rem;
+                --padding-horizontal: 1.125rem;
+                --padding-vertical: 2.25rem;
+                --spacing: 0.75rem;
             }
         }
-    </style>
+    </style><noscript>
+        <style>
+            body {
+                overflow: auto !important;
+            }
+
+            #main {
+                opacity: 1.0 !important;
+                transform: none !important;
+                transition: none !important;
+                filter: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 
-<body><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 40 40" display="none" width="0" height="0">
-        <symbol id="icon-8a75e9205b2d7697ad826d592ebf05f0" viewBox="0 0 40 40">
+<body class="is-loading"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
+        <symbol id="icon-67ad41ecc66a1b1cd00d0d3b20c00017" viewBox="0 0 40 40">
             <path
-                d="M19.8,34.2c-0.3,0-0.3-0.1-0.4-0.1L6.6,21.4c-0.1-0.1-0.1-0.1-0.1-0.4c0-0.3,0.1-0.3,0.1-0.4l1.5-1.5 C8.2,19.1,8.2,19,8.5,19s0.3,0.1,0.4,0.1l9.2,9.2V5.9c0-0.1,0-0.2,0-0.2c0,0,0,0,0,0c0.1-0.1,0.2-0.1,0.4-0.1H21 c0.2,0,0.4,0.1,0.5,0.1c0,0,0,0.1,0,0.2v22.4l9.2-9.2c0.1-0.1,0.1-0.1,0.4-0.1c0.3,0,0.3,0.1,0.4,0.1l1.5,1.5 c0.1,0.1,0.1,0.1,0.1,0.4c0,0.3-0.1,0.3-0.1,0.4L20.2,34.1C20.1,34.1,20.1,34.2,19.8,34.2z" />
-        </symbol>
-        <symbol id="icon-5df67a211ae41c4e5f96b6e0ea004ca3" viewBox="0 0 40 40">
-            <path
-                d="M28,31.4c-0.3-0.3-0.7-0.5-1.2-0.5h-1.6V16.1c0-0.4-0.2-0.8-0.5-1.2c-0.3-0.3-0.7-0.5-1.2-0.5h-9.8c-0.4,0-0.8,0.2-1.2,0.5 s-0.5,0.7-0.5,1.2v3.3c0,0.4,0.2,0.8,0.5,1.2c0.3,0.3,0.7,0.5,1.2,0.5h1.6v9.8h-1.6c-0.4,0-0.8,0.2-1.2,0.5s-0.5,0.7-0.5,1.2v3.3 c0,0.4,0.2,0.8,0.5,1.2s0.7,0.5,1.2,0.5h13.1c0.4,0,0.8-0.2,1.2-0.5s0.5-0.7,0.5-1.2v-3.3C28.5,32.1,28.3,31.7,28,31.4z M24.7,1.9 c-0.3-0.3-0.7-0.5-1.2-0.5H17c-0.4,0-0.8,0.2-1.2,0.5c-0.3,0.3-0.5,0.7-0.5,1.2V8c0,0.4,0.2,0.8,0.5,1.2c0.3,0.3,0.7,0.5,1.2,0.5 h6.5c0.4,0,0.8-0.2,1.2-0.5c0.3-0.3,0.5-0.7,0.5-1.2V3.1C25.2,2.6,25.1,2.2,24.7,1.9z" />
-        </symbol>
-        <symbol id="icon-fe5d5fdb64e50b34c3e536f93a94c91e" viewBox="0 0 40 40">
-            <path
-                d="M34.2,18.7v2.5c0,0.7-0.2,1.3-0.6,1.8c-0.4,0.5-1,0.7-1.7,0.7H18.1l5.8,5.8c0.5,0.5,0.7,1.1,0.7,1.8c0,0.7-0.2,1.3-0.7,1.8 l-1.5,1.5c-0.5,0.5-1.1,0.7-1.8,0.7c-0.7,0-1.3-0.2-1.8-0.7L6.1,21.8c-0.5-0.5-0.7-1.1-0.7-1.8c0-0.7,0.2-1.3,0.7-1.8L18.8,5.4 c0.5-0.5,1.1-0.7,1.8-0.7c0.7,0,1.3,0.2,1.8,0.7l1.5,1.5c0.5,0.5,0.7,1.1,0.7,1.8s-0.2,1.3-0.7,1.8l-5.8,5.8h13.8 c0.7,0,1.2,0.2,1.7,0.7C34,17.5,34.2,18,34.2,18.7z" />
-        </symbol>
-        <symbol id="icon-8c4b37645de3c276d895d87df51ba614" viewBox="0 0 40 40">
-            <path
-                d="M36,20.3c0,3.5-1,6.6-3.1,9.4c-2,2.8-4.7,4.7-7.9,5.8c-0.4,0.1-0.6,0-0.8-0.1c-0.2-0.2-0.3-0.4-0.3-0.6v-4.4 c0-1.3-0.4-2.3-1.1-3c0.8-0.1,1.5-0.2,2.1-0.4c0.6-0.2,1.3-0.4,2-0.8c0.7-0.4,1.2-0.8,1.7-1.4c0.5-0.5,0.8-1.3,1.1-2.2 s0.4-2,0.4-3.1c0-1.7-0.5-3.1-1.6-4.3c0.5-1.3,0.5-2.7-0.2-4.2c-0.4-0.1-1,0-1.7,0.2c-0.7,0.3-1.4,0.6-1.9,0.9L24,12.5 c-1.3-0.4-2.6-0.5-4-0.5s-2.7,0.2-4,0.5c-0.2-0.2-0.5-0.3-0.9-0.6c-0.4-0.2-0.9-0.5-1.7-0.8c-0.8-0.3-1.4-0.4-1.8-0.3 c-0.6,1.6-0.7,3-0.1,4.2c-1.1,1.2-1.6,2.6-1.6,4.3c0,1.2,0.1,2.2,0.4,3.1s0.6,1.6,1.1,2.2s1,1,1.7,1.4c0.7,0.4,1.3,0.6,2,0.8 c0.6,0.2,1.3,0.3,2.1,0.4c-0.6,0.5-0.9,1.2-1,2.1c-0.3,0.1-0.6,0.2-0.9,0.3c-0.3,0.1-0.7,0.1-1.2,0.1c-0.5,0-0.9-0.1-1.4-0.4 c-0.5-0.3-0.8-0.7-1.2-1.3c-0.3-0.4-0.6-0.8-1-1.1c-0.4-0.3-0.8-0.4-1-0.5L9,26.5c-0.3,0-0.5,0-0.6,0.1c-0.1,0.1-0.1,0.1-0.1,0.2 c0,0.1,0.1,0.2,0.2,0.3c0.1,0.1,0.2,0.2,0.3,0.2l0.1,0.1c0.3,0.1,0.6,0.4,0.9,0.8s0.5,0.7,0.7,1.1l0.2,0.5c0.2,0.5,0.5,1,0.9,1.3 c0.4,0.3,0.9,0.5,1.4,0.6c0.5,0.1,1,0.1,1.4,0.1c0.5,0,0.9,0,1.2-0.1l0.5-0.1c0,0.5,0,1.1,0,1.9c0,0.7,0,1.1,0,1.1 c0,0.2-0.1,0.5-0.3,0.6c-0.2,0.2-0.5,0.2-0.8,0.1c-3.2-1.1-5.8-3-7.9-5.8S4,23.8,4,20.3c0-2.9,0.7-5.6,2.1-8S9.5,7.8,12,6.4 s5.1-2.1,8-2.1s5.6,0.7,8,2.1s4.4,3.4,5.8,5.8S36,17.4,36,20.3L36,20.3z" />
-        </symbol>
-        <symbol id="icon-c3c8e1063e3b7f84f6b54712741de139" viewBox="0 0 40 40">
-            <path
-                d="M37.3,15.3v15.3c0,0.8-0.3,1.6-0.9,2.2c-0.6,0.6-1.4,0.9-2.2,0.9H5.8c-0.8,0-1.6-0.3-2.2-0.9s-0.9-1.4-0.9-2.2V15.3 c0.5,0.6,1.2,1.1,2,1.7c4.7,3.1,7.9,5.4,9.6,6.7c0.7,0.5,1.4,0.9,1.8,1.2c0.4,0.3,1,0.6,1.9,0.9c0.7,0.3,1.5,0.5,2.1,0.5l0,0 c0.6,0,1.4-0.2,2.1-0.5c0.7-0.3,1.4-0.6,1.9-0.9c0.4-0.3,1-0.7,1.8-1.2c2.2-1.6,5.4-3.8,9.6-6.7C36.1,16.5,36.7,15.9,37.3,15.3 L37.3,15.3z M37.3,9.6c0,1-0.3,2-0.9,2.9c-0.6,0.9-1.5,1.8-2.4,2.4c-4.9,3.3-7.9,5.4-9,6.2c-0.1,0.1-0.4,0.3-0.8,0.6 c-0.4,0.3-0.7,0.5-1,0.7c-0.3,0.2-0.6,0.4-1,0.6c-0.4,0.2-0.7,0.4-1.1,0.5c-0.4,0.1-0.6,0.2-0.9,0.2l0,0c-0.3,0-0.6-0.1-0.9-0.2 c-0.3-0.1-0.7-0.3-1.1-0.5c-0.4-0.2-0.7-0.4-1-0.6c-0.3-0.2-0.6-0.4-1-0.7c-0.4-0.3-0.7-0.5-0.8-0.6c-1.1-0.8-2.8-2-5.1-3.5 c-2.3-1.6-3.3-2.4-3.7-2.7c-0.8-0.5-1.6-1.2-2.3-2.2s-1-1.9-1-2.6c0-1,0.3-1.9,0.8-2.5c0.5-0.6,1.2-1,2.3-1h28.4 c0.8,0,1.6,0.3,2.2,0.9C37.1,8.1,37.3,8.8,37.3,9.6L37.3,9.6z" />
-        </symbol>
-        <symbol id="icon-bf393d6ea48a4e69e1ed58a3563b94a5" viewBox="0 0 40 40">
-            <path
-                d="M12.1,13.8v19.1H5.7V13.8C5.7,13.8,12.1,13.8,12.1,13.8z M12.5,7.9c0,0.9-0.3,1.7-1,2.4c-0.7,0.6-1.5,0.9-2.6,0.9h0 c-1.1,0-1.9-0.3-2.5-0.9c-0.6-0.6-1-1.4-1-2.4c0-1,0.3-1.7,1-2.4S7.9,4.6,9,4.6s1.9,0.3,2.6,0.9S12.5,6.9,12.5,7.9z M35,22v11h-6.4 V22.7c0-1.4-0.3-2.4-0.8-3.2c-0.5-0.8-1.3-1.1-2.4-1.1c-0.8,0-1.5,0.2-2,0.7c-0.5,0.4-1,1-1.2,1.7c-0.1,0.4-0.2,0.9-0.2,1.6v10.7 h-6.4c0-5.1,0-9.3,0-12.5s0-5.1,0-5.7l0-0.9H22v2.8h0c0.3-0.4,0.5-0.8,0.8-1.1c0.3-0.3,0.6-0.6,1.1-1c0.5-0.4,1-0.6,1.7-0.8 c0.7-0.2,1.4-0.3,2.2-0.3c2.2,0,4,0.7,5.3,2.2C34.4,17,35,19.1,35,22L35,22z" />
+                d="M34.1,19.9c0,0.3-0.1,0.3-0.1,0.4L21.3,33.1c-0.1,0.1-0.1,0.1-0.4,0.1c-0.3,0-0.3-0.1-0.4-0.1L19,31.6 c-0.1-0.1-0.1-0.1-0.1-0.4s0.1-0.3,0.1-0.4l9.2-9.2H5.8c-0.1,0-0.2,0-0.2,0c0,0,0,0,0,0c-0.1-0.1-0.1-0.2-0.1-0.4v-2.5 c0-0.2,0.1-0.4,0.1-0.5c0,0,0.1,0,0.2,0h22.4L19,9c-0.1-0.1-0.1-0.1-0.1-0.4c0-0.3,0.1-0.3,0.1-0.4l1.5-1.5c0.1-0.1,0.1-0.1,0.4-0.1 c0.3,0,0.3,0.1,0.4,0.1L34,19.5C34,19.6,34.1,19.6,34.1,19.9z" />
         </symbol>
     </svg>
     <div id="wrapper">
         <div id="main">
-            <div class="inner">
-                <div id="container04" class="style1 container default full screen">
+            <div class="inner" id="parentContainer">
+                <div id="container06" class="style2 container default">
                     <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1">
-                            <h1 id="text03" class="style4">My Portfolio</h1>
-                            <p id="text07" class="style3"><span class="p">Here are some projects I built for
-                                    myself<br /> and for some clients.</span></p>
-                            <ul id="buttons01" class="style1 buttons">
-                                <li><a href="index.html#start" class="button n01"><svg>
-                                            <use xlink:href="#icon-8a75e9205b2d7697ad826d592ebf05f0"></use>
-                                        </svg><span class="label">Explore</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                    data-scroll-invisible="1" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                            <div>
-                                <h2 id="text06" class="style1">Easter Eggs Escape</h2>
-                                <p id="text04" class="style3">You over-slept, you're late, you only work one day a
-                                    year and you're late.</p>
-                                <ul id="buttons08" class="style1 buttons">
-                                    <li><a href="https://ardaerbaharli.github.io/portfolio/eastereggsescape/"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div id="image01" class="style1 image full"><a
-                                        href="https://ardaerbaharli.github.io/portfolio/eastereggsescape/" class="frame"><img
-                                            src="assets/images/eee.jpg" alt="" /></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="container03" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1">
-                            <div>
-                                <div id="image08" class="style1 image full"><a
-                                        href="https://ardaerbaharli.github.io/portfolio/viciousvarmints/" class="frame"><img
-                                            src="assets/images/vv.jpg" alt="" /></a></div>
-                            </div>
-                            <div>
-                                <h2 id="text16" class="style1">Vicious Varmints</h2>
-                                <p id="text17" class="style3">Dang varmints! Eat yer food an' leave a mess. Gotta shoot'em all!</p>
-                                <ul id="buttons07" class="style1 buttons">
-                                    <li><a href="https://ardaerbaharli.github.io/portfolio/viciousvarmints/"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
+                        <div class="inner">
+                            <h1 id="text02" class="style5">Portfolio</h1>
+                            <p id="text09" class="style1">Here, you can find some of the projects I am credited in</p>
                         </div>
                     </div>
                 </div>
 
-                <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                data-scroll-invisible="1" class="style2 container columns">
-                <div class="wrapper">
-                    <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                        <div>
-                            <h2 id="text06" class="style1">Blokshot Christmas</h2>
-                            <p id="text04" class="style3">A winter wonderland of geometric joy for the fans of the original game.</p>
-                            <ul id="buttons08" class="style1 buttons">
-                                <li><a href="https://ardaerbaharli.github.io/portfolio/blokshotchristmas/"
-                                        class="button n01"><svg>
-                                            <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                        </svg><span class="label">Check it out</span></a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div id="image01" class="style1 image full"><a
-                                    href="https://ardaerbaharli.github.io/portfolio/blokshotchristmas/" class="frame"><img
-                                        src="assets/images/bc.jpg" alt="" /></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="container03" class="style2 container columns">
-                <div class="wrapper">
-                    <div class="inner" data-onvisible-trigger="1">
-                        <div>
-                            <div id="image08" class="style1 image full"><a
-                                    href="https://ardaerbaharli.github.io/portfolio/blokshotevilution/" class="frame"><img
-                                        src="assets/images/bevil.jpg" alt="" /></a></div>
-                        </div>
-                        <div>
-                            <h2 id="text16" class="style1">Blokshot EVILution</h2>
-                            <p id="text17" class="style3">A ghoulishly clever Halloween treat for fans of the game.</p>
-                            <ul id="buttons07" class="style1 buttons">
-                                <li><a href="https://ardaerbaharli.github.io/portfolio/blokshotevilution/"
-                                        class="button n01"><svg>
-                                            <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                        </svg><span class="label">Check it out</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
-            <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-            data-scroll-invisible="1" class="style2 container columns">
-            <div class="wrapper">
-                <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                    <div>
-                        <h2 id="text06" class="style1">Blokshot Evolution</h2>
-                        <p id="text04" class="style3">Feel the rush. A beautiful firework display of hypnotic neon destruction.</p>
-                        <ul id="buttons08" class="style1 buttons">
-                            <li><a href="https://ardaerbaharli.github.io/portfolio/blokshotevolution/"
-                                    class="button n01"><svg>
-                                        <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                    </svg><span class="label">Check it out</span></a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div id="image01" class="style1 image full"><a
-                                href="https://ardaerbaharli.github.io/portfolio/blokshotevolution/" class="frame"><img
-                                    src="assets/images/bevol.jpg" alt="" /></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="container03" class="style2 container columns">
-            <div class="wrapper">
-                <div class="inner" data-onvisible-trigger="1">
-                    <div>
-                        <div id="image08" class="style1 image full"><a
-                                href="https://ardaerbaharli.github.io/portfolio/monkeyswingers/" class="frame"><img
-                                    src="assets/images/ms1.jpg" alt="" /></a></div>
-                    </div>
-                    <div>
-                        <h2 id="text16" class="style1">Monkey Swingers</h2>
-                        <p id="text17" class="style3">Monkeys ready for fun!</p>
-
-                        <ul id="buttons07" class="style1 buttons">
-                            <li><a href="https://ardaerbaharli.github.io/portfolio/monkeyswingers/"
-                                    class="button n01"><svg>
-                                        <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                    </svg><span class="label">Check it out</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-        <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-        data-scroll-invisible="1" class="style2 container columns">
-        <div class="wrapper">
-            <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                <div>
-                    <h2 id="text06" class="style1">Monkey Swingers 2</h2>
-                    <p id="text04" class="style3">The super swingin’ monkey is back in Monkey Swingers 2! It’s a new planet and a whole new adventure! Let’s get swinging!</p>
-                    <ul id="buttons08" class="style1 buttons">
-                        <li><a href="https://ardaerbaharli.github.io/portfolio/monkeyswingers2/"
-                                class="button n01"><svg>
-                                    <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                </svg><span class="label">Check it out</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div id="image01" class="style1 image full"><a
-                            href="https://ardaerbaharli.github.io/portfolio/monkeyswingers2/" class="frame"><img
-                                src="assets/images/ms2.jpg" alt="" /></a></div>
-                </div>
             </div>
         </div>
     </div>
-    <div id="container03" class="style2 container columns">
-        <div class="wrapper">
-            <div class="inner" data-onvisible-trigger="1">
-                <div>
-                    <div id="image08" class="style1 image full"><a
-                            href="https://ardaerbaharli.github.io/portfolio/ketchuprush/" class="frame"><img
-                                src="assets/images/ketchuprush.jpg" alt="" /></a></div>
-                </div>
-                <div>
-                    <h2 id="text16" class="style1">Ketchup Rush</h2>
-                    <p id="text17" class="style3">It is a hyper-casual game where you are being attacked
-                        by
-                        hamburgers, fries and hotdogs.
-                        In order to stop them you have to shoot them with ketchup and mustard!</p>
-
-                    <ul id="buttons07" class="style1 buttons">
-                        <li><a href="https://ardaerbaharli.github.io/portfolio/ketchuprush/"
-                                class="button n01"><svg>
-                                    <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                </svg><span class="label">Check it out</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-     <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                    data-scroll-invisible="1" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                            <div>
-                                <h2 id="text06" class="style1">Roof Runner</h2>
-                                <p id="text04" class="style3">
-                                    Goal is to avoid obstacles while grabbing as many coins as possible.
-                                    If you grab too many coins, you get caught by the police. So don't be greedy!
-                                </p>
-                                <ul id="buttons08" class="style1 buttons">
-                                    <li><a href="https://ardaerbaharli.github.io/portfolio/roof-runner/"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div id="image01" class="style1 image full"><a
-                                        href="https://ardaerbaharli.github.io/portfolio/roof-runner/" class="frame"><img
-                                            src="assets/images/roofrunner.jpg" alt="" /></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="container03" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1">
-                            <div>
-                                <div id="image08" class="style1 image full"><a
-                                        href="https://ardaerbaharli.github.io/portfolio/bullshit/" class="frame"><img
-                                            src="assets/images/bullshit.jpg" alt="" /></a></div>
-                            </div>
-                            <div>
-                                <h2 id="text16" class="style1">Bullshit</h2>
-                                <p id="text17" class="style3">Mobile game of the popular Netflix game show BULLSH*T.</p>
-                                <ul id="buttons07" class="style1 buttons">
-                                    <li><a href="https://ardaerbaharli.github.io/portfolio/bullshit/"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                data-scroll-invisible="1" class="style2 container columns">
-                <div class="wrapper">
-                    <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                        <div>
-                            <h2 id="text06" class="style1">Run Attack</h2>
-                            <p id="text04" class="style3">Avoid the obstacles! This is a game that I built
-                                during my
-                                second internship at <a href="https://www.ardgrup.com.tr">ARDGRUP</a></p>
-                            <ul id="buttons08" class="style1 buttons">
-                                <li><a href="https://ardaerbaharli.github.io/portfolio/run-attack/"
-                                        class="button n01"><svg>
-                                            <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                        </svg><span class="label">Check it out</span></a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div id="image01" class="style1 image full"><a
-                                    href="https://ardaerbaharli.github.io/portfolio/run-attack/" class="frame"><img
-                                        src="assets/images/eee.jpg" alt="" /></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="container03" class="style2 container columns">
-                <div class="wrapper">
-                    <div class="inner" data-onvisible-trigger="1">
-                        <div>
-                            <div id="image08" class="style1 image full"><a
-                                    href="https://ardaerbaharli.github.io/portfolio/solitaire/" class="frame"><img
-                                        src="assets/images/eee.jpg" alt="" /></a></div>
-                        </div>
-                        <div>
-                            <h2 id="text16" class="style1">Solitaire</h2>
-                            <p id="text17" class="style3">Classic solitaire game that I built during my first
-                                internship at <a href="https://www.ardgrup.com.tr">ARDGRUP</a>.
-                                It has all the features that a classic solitaire game has.</p>
-
-                            <ul id="buttons07" class="style1 buttons">
-                                <li><a href="https://ardaerbaharli.github.io/portfolio/solitaire/"
-                                        class="button n01"><svg>
-                                            <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                        </svg><span class="label">Check it out</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-            data-scroll-invisible="1" class="style2 container columns">
-            <div class="wrapper">
-                <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                    <div>
-                        <h2 id="text06" class="style1">Roaming Rooster</h2>
-                        <p id="text04" class="style3">It is a game where you are a rooster trying to move
-                            forward in the city.
-                            There are a lot of things you have to be very careful about.</p>
-                        <ul id="buttons08" class="style1 buttons">
-                            <li><a href="https://ardaerbaharli.github.io/portfolio/roaming-rooster/"
-                                    class="button n01"><svg>
-                                        <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                    </svg><span class="label">Check it out</span></a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div id="image01" class="style1 image full"><a
-                                href="https://ardaerbaharli.github.io/portfolio/roaming-rooster/" class="frame"><img
-                                    src="assets/images/roamingrooster.jpg" alt="" /></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="container03" class="style2 container columns">
-            <div class="wrapper">
-                <div class="inner" data-onvisible-trigger="1">
-                    <div>
-                        <div id="image08" class="style1 image full"><a
-                                href="https://ardaerbaharli.github.io/portfolio/speed/" class="frame"><img
-                                    src="assets/images/speed.jpg" alt="" /></a></div>
-                    </div>
-                    <div>
-                        <h2 id="text16" class="style1">Speed Card Game</h2>
-                        <p id="text17" class="style3">It is a card game. To be victorious you have to be
-                            either
-                            fast or lucky. You can read the rules from here.</p>
-                        <ul id="buttons07" class="style1 buttons">
-                            <li><a href="https://ardaerbaharli.github.io/portfolio/speed/"
-                                    class="button n01"><svg>
-                                        <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                    </svg><span class="label">Check it out</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-        <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-        data-scroll-invisible="1" class="style2 container columns">
-        <div class="wrapper">
-            <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                <div>
-                    <h2 id="text06" class="style1">Simple RSS</h2>
-                    <p id="text04" class="style3">This is the simplest RSS bot you can ever see in your
-                        life. I built this app to use it personally.</p>
-                    <ul id="buttons08" class="style1 buttons">
-                        <li><a href="https://ardaerbaharli.github.io/portfolio/simple-rss/"
-                                class="button n01"><svg>
-                                    <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                </svg><span class="label">Check it out</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div id="image01" class="style1 image full"><a
-                            href="https://ardaerbaharli.github.io/portfolio/simple-rss/" class="frame"><img
-                                src="assets/images/simplerss.jpg" alt="" /></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="container03" class="style2 container columns">
-        <div class="wrapper">
-            <div class="inner" data-onvisible-trigger="1">
-                <div>
-                    <div id="image08" class="style1 image full"><a
-                            href="https://ardaerbaharli.github.io/portfolio/dont-miss/" class="frame"><img
-                                src="assets/images/dontmiss.jpg" alt="" /></a></div>
-                </div>
-                <div>
-                    <h2 id="text16" class="style1">Don't Miss</h2>
-                    <p id="text17" class="style3">This is the first game I have ever developed. I
-                        learned a
-                        lot while trying to make it work.
-                        The goal is to reach the highest score by tapping on colored squares and not
-                        missing!</p>
-
-                    <ul id="buttons07" class="style1 buttons">
-                        <li><a href="https://ardaerbaharli.github.io/portfolio/dont-miss/"
-                                class="button n01"><svg>
-                                    <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                </svg><span class="label">Check it out</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-     <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                    data-scroll-invisible="1" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                            <div>
-                                <h2 id="text06" class="style1">Prototypes & Small Games</h2>
-                                <p id="text04" class="style3">Some prototypes and small games that I have been
-                                    working
-                                    on/finished. You can see them here.</p>
-                                <ul id="buttons08" class="style1 buttons">
-                                    <li><a href="https://ardaerbaharli.github.io/portfolio/small-games/"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div id="image01" class="style1 image full"><a
-                                        href="https://ardaerbaharli.github.io/portfolio/small-games/" class="frame"><img
-                                            src="assets/images/smallgames.jpg" alt="" /></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="container03" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1">
-                            <div>
-                                <div id="image08" class="style1 image full"><a
-                                        href="https://github.com/ardaerbaharli/chastocaBot" class="frame"><img
-                                            src="assets/images/chastocabot.jpg" alt="" /></a></div>
-                            </div>
-                            <div>
-                                <h2 id="text16" class="style1">Chastoca Bot</h2>
-                                <p id="text17" class="style3">It is an open source Twitch chat bot that allows you
-                                    to
-                                    moderate your channel without using any 3rd party bots. Also you can add custom
-                                    commands!</p>
-
-                                <ul id="buttons07" class="style1 buttons">
-                                    <li><a href="https://github.com/ardaerbaharli/chastocaBot"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                 <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                    data-scroll-invisible="1" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                            <div>
-                                <h2 id="text06" class="style1">TwitchLurker</h2>
-                                <p id="text04" class="style3">Twitch Lurker is a bot that joins to chat room of the
-                                    Twitch channels you follow. It acts as a chatter and sends messages to as many
-                                    channels as you wish at the same time without you needing to open up Twitch. It
-                                    also
-                                    lets you benefit from subscription gifts and drops as long as you leave it on.</p>
-                                <ul id="buttons08" class="style1 buttons">
-                                    <li><a href="https://github.com/ardaerbaharli/twitchLurkerV2"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div id="image01" class="style1 image full"><a
-                                        href="https://github.com/ardaerbaharli/twitchLurkerV2" class="frame"><img
-                                            src="assets/images/twitchLurker.jpg" alt="" /></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="container03" class="style2 container columns">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1">
-                            <div>
-                                <div id="image08" class="style1 image full"><a
-                                        href="https://ardaerbaharli.github.io/portfolio/yoklama-seysi/" class="frame"><img
-                                            src="assets/images/eee.jpg" alt="" /></a></div>
-                            </div>
-                            <div>
-                                <h2 id="text16" class="style1">Yoklama Şeysi</h2>
-                                <p id="text17" class="style3">It is an attendance tracking app that I built for me
-                                    and
-                                    my friends with Xamarin.</p>
-                                <ul id="buttons07" class="style1 buttons">
-                                    <li><a href="https://ardaerbaharli.github.io/portfolio/yoklama-seysi/"
-                                            class="button n01"><svg>
-                                                <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                            </svg><span class="label">Check it out</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-                <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0"
-                data-scroll-invisible="1" class="style2 container columns">
-                <div class="wrapper">
-                    <div class="inner" data-onvisible-trigger="1" data-reorder="1,0">
-                        <div>
-                            <h2 id="text06" class="style1">Netflix like GUI Application</h2>
-                            <p id="text04" class="style3">I built this application with Java for an assignment.</p>
-                            <ul id="buttons08" class="style1 buttons">
-                                <li><a href="https://ardaerbaharli.github.io/portfolio/https://github.com/ardaerbaharli/BIL343-HW2/""
-                                        class="button n01"><svg>
-                                            <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use>
-                                        </svg><span class="label">Check it out</span></a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div id="image01" class="style1 image full"><a
-                                    href="https://ardaerbaharli.github.io/portfolio/https://github.com/ardaerbaharli/BIL343-HW2/"" class="frame"><img
-                                        src="assets/images/eee.jpg" alt="" /></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-                <div id="container05" class="style1 container default full screen">
-                    <div class="wrapper">
-                        <div class="inner" data-onvisible-trigger="1">
-                            <ul id="buttons06" class="style1 buttons">
-                                <li><a href="https://ardaerbaharli.github.io" class="button n01"><svg>
-                                            <use xlink:href="#icon-fe5d5fdb64e50b34c3e536f93a94c91e"></use>
-                                        </svg><span class="label">Bio</span></a></li>
-                            </ul>
-                            <ul id="icons02" class="style1 icons">
-                                <li><a class="n01" href="https://github.com/ardaerbaharli" aria-label="GitHub"><svg>
-                                            <use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use>
-                                        </svg><span class="label">GitHub</span></a></li>
-                                <li><a class="n02"
-                                        href="cdn-cgi/l/email-protection#b6d7c4d2d7d3c4d4d7ded7c4dadf87f6d1dbd7dfda98d5d9db"
-                                        aria-label="Email"><svg>
-                                            <use xlink:href="#icon-c3c8e1063e3b7f84f6b54712741de139"></use>
-                                        </svg><span class="label">Email</span></a></li>
-                                <li><a class="n03" href="https://www.linkedin.com/in/arda-erbaharli-5401471aa/"
-                                        aria-label="LinkedIn"><svg>
-                                            <use xlink:href="#icon-bf393d6ea48a4e69e1ed58a3563b94a5"></use>
-                                        </svg><span class="label">LinkedIn</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
+        // Define an array of data for each element
+        var data = [{
+                imageName: "asss",
+                title: "Mathletix Money",
+                description: "Next game of the Mathletix series. This time, it's all about money!",
+                url: "portfolio2"
+            },
+            {
+                imageName: "lwc",
+                title: "The Linguist: Word Craft",
+                description: "If you like word games, Word Craft is the game you've been waiting for!",
+                url: "portfolio2"
+            },
+            {
+                imageName: "ms1",
+                title: "Monkey Swingers",
+                description: "Monkeys ready for fun!",
+                url: "monkeyswingers"
+            },
+            {
+                imageName: "ms2",
+                title: "Monkey Swingers 2",
+                description: "he super swingin’ monkey is back in Monkey Swingers 2! It’s a new planet and a whole new adventure! Let’s get swinging!",
+                url: "monkeyswingers2"
+            },
+            {
+                imageName: "bevol",
+                title: "Blokshot Evolution",
+                description: "Feel the rush. A beautiful firework display of hypnotic neon destruction.",
+                url: "blokshotevolution"
+            },
+            {
+                imageName: "bc",
+                title: "Blokshot Christmas",
+                description: "A winter wonderland of geometric joy for the fans of the original game.",
+                url: "blokshotchristmas"
+            },
+            {
+                imageName: "bevil",
+                title: "Blokshot EVILution",
+                description: "A ghoulishly clever Halloween treat for fans of the game.",
+                url: "blokshotevilution"
+            },
+            {
+                imageName: "roamingrooster",
+                title: "Roaming Rooster",
+                description: "It is a game where you are a rooster trying to move forward in the city. There are a lot of things you have to be very careful about.",
+                url: "roaming-rooster"
+            },
+            {
+                imageName: "eee",
+                title: "Easter Eggs Escape",
+                description: "ou over-slept, you're late, you only work one day a year and you're late",
+                url: "eastereggsescape"
+            },
+            {
+                imageName: "vv",
+                title: "Vicious Varmints",
+                description: "Dang varmints! Eat yer food an' leave a mess. Gotta shoot'em all!",
+                url: "viciousvarmints"
+            },
+            {
+                imageName: "ketchuprush",
+                title: "Ketchup Rush",
+                description: "You are being  by hamburgers, fries and hotdogs. In order to stop them you have to shoot them with ketchup and mustard!",
+                url: "ketchuprush"
+            },
+            {
+                imageName: "roofrunner",
+                title: "Roof Runner",
+                description: "Try to avoid obstacles while grabbing as many coins as possible. If you grab too much money, you'll get caught by the police. Don't be greedy!",
+                url: "roof-runner"
+            },
+            {
+                imageName: "bullshit",
+                title: "Bullshit",
+                description: "Mobile game of the popular Netflix game show BULLSH*T.",
+                url: "bullshit"
+            },
+            {
+                imageName: "asss",
+                title: "Run Attack",
+                description: "Avoid the obstacles! This is a game that I built during my second internship at ARDGRUP",
+                url: "run-attack"
+            },
+            {
+                imageName: "asss",
+                title: "Solitaire",
+                description: "Classic solitaire game that I built during my first internship at ARDGRUP.",
+                url: "solitaire"
+            },
+
+            {
+                imageName: "speed",
+                title: "Speed Card Game",
+                description: "It is a card game where to be victorious you have to be either fast or very lucky. You can read the rules from here.",
+                url: "speed"
+            },
+            {
+                imageName: "simplerss",
+                title: "Simple RSS",
+                description: "This is the simplest RSS bot you can find. I built this app to use it personally.",
+                url: "simple-rss"
+            },
+            {
+                imageName: "dontmiss",
+                title: "Don't Miss",
+                description: "This is the first game I have ever developed and published. I learned a lot while trying to make it work. The goal is to reach the highest score by tapping on colored squares and not to miss!",
+                url: "dont-miss"
+            },
+            {
+                imageName: "smallgames",
+                title: "Prototypes & Small Games",
+                description: "Some prototypes and small games that I have been working on/finished. You can see them here.",
+                url: "small-games"
+            },
+            {
+                imageName: "chastocabot",
+                title: "Chastoca Bot",
+                description: "It is an open source Twitch chat bot that allows you to moderate your channel without using any 3rd party bots. Also you can add custom commands!",
+                url: "chastocaBot"
+            },
+            {
+                imageName: "twitchLurker",
+                title: "TwitchLurker",
+                description: "Twitch Lurker is a bot that joins to chat room of the Twitch channels you follow. It acts as a chatter and sends messages to as many channels as you wish at the same time without you needing to open up Twitch. It also lets you benefit from subscription gifts and drops as long as you leave it on.",
+                url: "twitchLurkerV2"
+            },
+            {
+                imageName: "asss",
+                title: "Yoklama Şeysi",
+                description: "It is an attendance tracking app that I built for me and my friends with Xamarin.",
+                url: "yoklama-seysi"
+            },
+            {
+                imageName: "asss",
+                title: "ssssss",
+                description: "ss",
+                url: "portfolio2"
+            },
+            // Add more objects with different parameter values as needed
+        ];
+
+        // Get the reference to the parent container element
+        var parentContainer = document.getElementById("parentContainer");
+
+        // Loop through the data array and create elements dynamically
+        data.forEach(function (item) {
+            // Create a new element
+            var newElement = document.createElement("div");
+            newElement.id = "container03";
+            newElement.className = "style1 container columns";
+
+            // Set the inner HTML of the new element with the dynamic values
+            newElement.innerHTML = `
+        <div class="wrapper">
+            <div class="inner" data-onvisible-trigger="1">
+                <div>
+                    <div id="image02" class="style3 image"><span class="frame"><img src="assets/images/${item.imageName}.jpg" alt="" /></span></div>
+                </div>
+                <div>
+                    <h2 id="text03" class="style4">${item.title}</h2>
+                    <p id="text07" class="style1">${item.description}</p>
+                </div>
+                <div>
+                    <ul id="icons05" class="style1 icons">
+                        <li><a class="n01" href="https://ardaerbaharli.github.io/portfolio/${item.url}/" aria-label="Arrow Right"><svg>
+                            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                        </svg><span class="label">Arrow Right</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `;
+
+            // Append the new element to the parent container
+            parentContainer.appendChild(newElement);
+        });
+
         (function () {
             var on = addEventListener,
                 $ = function (q) {
@@ -2226,7 +1992,7 @@
                                 i;
                             for (i = 0; i < r.length; i++) {
                                 if (r[i] instanceof CSSMediaRule && matchMedia(r[i].conditionText).matches)(f)(r[
-                                i]);
+                                    i]);
                                 else if (r[i] instanceof CSSStyleRule && r[i].selectorText == selectorText) a.push(
                                     r[i]);
                             }
@@ -2369,146 +2135,22 @@
                     window.onerror = null;
                 }
             };
+            var loaderTimeout = setTimeout(function () {
+                $body.classList.add('with-loader');
+            }, 500);
+            on('load', function () {
+                setTimeout(function () {
+                    clearTimeout(loaderTimeout);
+                    $body.classList.remove('is-loading');
+                    $body.classList.add('is-playing');
+                    setTimeout(function () {
+                        $body.classList.remove('with-loader');
+                        $body.classList.remove('is-playing');
+                        $body.classList.add('is-ready');
+                    }, 750);
+                }, 100);
+            });
             loadElements(document.body);
-            (function () {
-                var scrollPointParent = function (target) {
-                        var inner;
-                        inner = $('#main > .inner');
-                        while (target && target.parentElement != inner) target = target.parentElement;
-                        return target;
-                    },
-                    doNextScrollPoint = function (event) {
-                        var e, target, id;
-                        event.preventDefault();
-                        event.stopPropagation();
-                        e = scrollPointParent(event.target);
-                        if (!e) return;
-                        while (e && e.nextElementSibling) {
-                            e = e.nextElementSibling;
-                            if (e.dataset.scrollId) {
-                                target = e;
-                                id = e.dataset.scrollId;
-                                break;
-                            }
-                        }
-                        if (!target || !id) return;
-                        if (target.dataset.scrollInvisible == '1') scrollToElement(target);
-                        else location.href = '#' + id;
-                    },
-                    doPreviousScrollPoint = function (e) {
-                        var e, target, id;
-                        event.preventDefault();
-                        event.stopPropagation();
-                        e = scrollPointParent(event.target);
-                        if (!e) return;
-                        while (e && e.previousElementSibling) {
-                            e = e.previousElementSibling;
-                            if (e.dataset.scrollId) {
-                                target = e;
-                                id = e.dataset.scrollId;
-                                break;
-                            }
-                        }
-                        if (!target || !id) return;
-                        if (target.dataset.scrollInvisible == '1') scrollToElement(target);
-                        else location.href = '#' + id;
-                    },
-                    doFirstScrollPoint = function (e) {
-                        var e, target, id;
-                        event.preventDefault();
-                        event.stopPropagation();
-                        e = scrollPointParent(event.target);
-                        if (!e) return;
-                        while (e && e.previousElementSibling) {
-                            e = e.previousElementSibling;
-                            if (e.dataset.scrollId) {
-                                target = e;
-                                id = e.dataset.scrollId;
-                            }
-                        }
-                        if (!target || !id) return;
-                        if (target.dataset.scrollInvisible == '1') scrollToElement(target);
-                        else location.href = '#' + id;
-                    },
-                    doLastScrollPoint = function (e) {
-                        var e, target, id;
-                        event.preventDefault();
-                        event.stopPropagation();
-                        e = scrollPointParent(event.target);
-                        if (!e) return;
-                        while (e && e.nextElementSibling) {
-                            e = e.nextElementSibling;
-                            if (e.dataset.scrollId) {
-                                target = e;
-                                id = e.dataset.scrollId;
-                            }
-                        }
-                        if (!target || !id) return;
-                        if (target.dataset.scrollInvisible == '1') scrollToElement(target);
-                        else location.href = '#' + id;
-                    };
-                window._nextScrollPoint = doNextScrollPoint;
-                window._previousScrollPoint = doPreviousScrollPoint;
-                window._firstScrollPoint = doFirstScrollPoint;
-                window._lastScrollPoint = doLastScrollPoint;
-                window._scrollToTop = function () {
-                    scrollToElement(null);
-                    if (window.location.hash) {
-                        history.pushState(null, null, '.');
-                    }
-                };
-                if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-                on('load', function () {
-                    var initialScrollPoint, h;
-                    h = thisHash();
-                    if (h && !h.match(/^[a-zA-Z0-9\-]+$/)) h = null;
-                    initialScrollPoint = $('[data-scroll-id="' + h + '"]');
-                    if (initialScrollPoint) scrollToElement(initialScrollPoint, 'instant');
-                });
-                on('hashchange', function (event) {
-                    var scrollPoint, h, pos;
-                    h = thisHash();
-                    if (h && !h.match(/^[a-zA-Z0-9\-]+$/)) return false;
-                    scrollPoint = $('[data-scroll-id="' + h + '"]');
-                    if (scrollPoint) scrollToElement(scrollPoint);
-                    else scrollToElement(null);
-                    return false;
-                });
-                on('click', function (event) {
-                    var t = event.target,
-                        tagName = t.tagName.toUpperCase(),
-                        scrollPoint;
-                    switch (tagName) {
-                        case 'IMG':
-                        case 'SVG':
-                        case 'USE':
-                        case 'U':
-                        case 'STRONG':
-                        case 'EM':
-                        case 'CODE':
-                        case 'S':
-                        case 'MARK':
-                        case 'SPAN':
-                            while (!!(t = t.parentElement))
-                                if (t.tagName == 'A') break;
-                            if (!t) return;
-                            break;
-                        default:
-                            break;
-                    }
-                    if (t.tagName == 'A' && t.getAttribute('href').substr(0, 1) == '#') {
-                        if (!!(scrollPoint = $('[data-scroll-id="' + t.hash.substr(1) +
-                                '"][data-scroll-invisible="1"]'))) {
-                            event.preventDefault();
-                            scrollToElement(scrollPoint);
-                        } else if (t.hash == window.location.hash) {
-                            event.preventDefault();
-                            history.replaceState(undefined, undefined, '#');
-                            location.replace(t.hash);
-                        }
-                    }
-                });
-            })();
             var style, sheet, rule;
             style = document.createElement('style');
             style.appendChild(document.createTextNode(''));
@@ -2565,47 +2207,7 @@
                     }, true);
                 })();
                 $body.classList.add('is-touch');
-            }(function () {
-                var breakpoints = {
-                        small: '(max-width: 736px)',
-                        medium: '(max-width: 980px)',
-                    },
-                    elements = $$('[data-reorder]');
-                elements.forEach(function (e) {
-                    var desktop = [],
-                        mobile = [],
-                        state = false,
-                        query, a, x, ce, f;
-                    if ('reorderBreakpoint' in e.dataset && e.dataset.reorderBreakpoint in breakpoints)
-                        query = breakpoints[e.dataset.reorderBreakpoint];
-                    else query = breakpoints.small;
-                    for (ce of e.childNodes) {
-                        if (ce.nodeType != 1) continue;
-                        desktop.push(ce);
-                    }
-                    a = e.dataset.reorder.split(',');
-                    for (x of a) mobile.push(desktop[parseInt(x)]);
-                    f = function () {
-                        var order = null,
-                            ce;
-                        if (window.matchMedia(query).matches) {
-                            if (!state) {
-                                state = true;
-                                for (ce of mobile) e.appendChild(ce);
-                            }
-                        } else {
-                            if (state) {
-                                state = false;
-                                for (ce of desktop) e.appendChild(ce);
-                            }
-                        }
-                    };
-                    on('resize', f);
-                    on('orientationchange', f);
-                    on('load', f);
-                    on('fullscreenchange', f);
-                });
-            })();
+            }
             var scrollEvents = {
                 items: [],
                 add: function (o) {
@@ -2992,7 +2594,7 @@
                     if ('CARRD_DISABLE_ANIMATION' in window) {
                         if (style == 'fade-in-background') $$(selector).forEach(function (e) {
                             e.style.setProperty('--onvisible-background-color',
-                            'rgba(0,0,0,0.001)');
+                                'rgba(0,0,0,0.001)');
                         });
                         return;
                     }
@@ -3009,7 +2611,8 @@
                                     _this.style.transition = effect.transition(speed, delay +
                                         staggerDelay);
                                 } else effect.transition.apply(_this, [speed, delay +
-                                staggerDelay]);
+                                    staggerDelay
+                                ]);
                                 effect.play.apply(_this, [intensity, !!children]);
                                 if (!effect.custom) setTimeout(function () {
                                     _this.style.removeProperty('backface-visibility');
@@ -3041,7 +2644,7 @@
                         triggerElement = e;
                         if (e.parentNode) {
                             if (e.parentNode.dataset.onvisibleTrigger) triggerElement = e
-                            .parentNode;
+                                .parentNode;
                             else if (e.parentNode.parentNode) {
                                 if (e.parentNode.parentNode.dataset.onvisibleTrigger)
                                     triggerElement = e.parentNode.parentNode;
@@ -3084,51 +2687,13 @@
                     });
                 },
             };
-            onvisible.add('h1.style4, h2.style4, h3.style4, p.style4', {
-                style: 'fade-right',
-                speed: 750,
-                intensity: 2,
-                delay: 0,
-                staggerOrder: '',
-                replay: false
-            });
-            onvisible.add('h1.style3, h2.style3, h3.style3, p.style3', {
-                style: 'fade-right',
+            onvisible.add('h1.style5, h2.style5, h3.style5, p.style5', {
+                style: 'fade-down',
                 speed: 750,
                 intensity: 0,
-                delay: 125,
-                staggerOrder: '',
-                replay: false
-            });
-            onvisible.add('.buttons.style1', {
-                style: 'fade-right',
-                speed: 750,
-                intensity: 0,
-                delay: 250,
-                replay: false
-            });
-            onvisible.add('h1.style1, h2.style1, h3.style1, p.style1', {
-                style: 'fade-right',
-                speed: 750,
-                intensity: 2,
                 delay: 0,
                 staggerOrder: '',
-                replay: false
-            });
-            onvisible.add('.image.style1', {
-                style: 'fade-in',
-                speed: 1000,
-                intensity: 10,
-                delay: 0,
-                staggerOrder: '',
-                replay: false
-            });
-            onvisible.add('.icons.style1', {
-                style: 'fade-right',
-                speed: 500,
-                intensity: 0,
-                delay: 0,
-                stagger: 125,
+                state: true,
                 replay: false
             });
         })();
