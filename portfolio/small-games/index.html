@@ -1769,6 +1769,7 @@
 
         var data = [{
                 imageName: "helix",
+                id: "helixJump", 
                 title: "Helix Jump",
                 description: "Clone of the popular game Helix Jump",
                 buttons: {
@@ -1777,6 +1778,7 @@
             },
             {
                 imageName: "bullseye",
+                id: "bullseyeShot",
                 title: "Bullseye Shot",
                 description: "Target shooting is always fun, but what if it's a moving target? More challenging, right?",
                 buttons: {
@@ -1786,6 +1788,7 @@
             },
             {
                 imageName: "batway",
+                id: "batWay",
                 title: "Bat Way",
                 description: "Navigate between zones and dodge flying balls - you have to sneak into a zone to earn betway points!",
                 buttons: {
@@ -1796,6 +1799,7 @@
             },
             {
                 imageName: "twisteddribble",
+                id: "twistedDribble",
                 title: "Twisted Dribble",
                 description: "Dribble past all the players coming for you.",
                 buttons: {
@@ -1804,6 +1808,7 @@
             },
             {
                 imageName: "clover",
+                id: "cloverAndCoins",
                 title: "Clover and Coins",
                 description: "Couple of gambling games with Irish theme.",
                 buttons: {
@@ -1814,6 +1819,7 @@
 
             {
                 imageName: "fairkicker",
+                id: "fairKicker",
                 title: "Fair Kicker",
                 description: "Bet on the number of kicks the player can hit within the timer!",
                 buttons: {
@@ -1823,6 +1829,7 @@
             },
             {
                 imageName: "questionmark",
+                id: "arrowThrow",
                 title: "Arrow Throw",
                 description: "Try to toss the ball as far up as possible without dropping it.",
                 buttons: {
@@ -1832,6 +1839,7 @@
 
             {
                 imageName: "questionmark",
+                id: "styrofoamFill",
                 title: "Styrofoam Fill",
                 description: "Some customer wanted me to build a styrofoam filling game prototype.",
                 buttons: {
@@ -1841,6 +1849,7 @@
             },
             {
                 imageName: "questionmark",
+                id: "grabber",
                 title: "Grabber",
                 description: "Classic gold miner game in 2D",
                 buttons: {
@@ -1862,7 +1871,7 @@
 
             // Set the inner HTML of the new element with the dynamic values
             newElement.innerHTML = `
-        <div class="wrapper">
+        <div class="wrapper" id="${item.id}">
             <div class="inner" data-onvisible-trigger="1">
                 <div>
                     <div id="image02" class="style3 image"><span class="frame"><img src="./assets/images/${item.imageName}.jpg" alt="" /></span></div>
