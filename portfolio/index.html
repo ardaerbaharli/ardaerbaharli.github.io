@@ -1772,6 +1772,7 @@
             },
             {
                 imageName: "lwc",
+                id: "linguistWordCraft",
                 title: "The Linguist: Word Craft",
                 description: "If you like word games, Word Craft is the game you've been waiting for!",
                 buttons: {
@@ -1782,6 +1783,7 @@
             },
             {
                 imageName: "ms1",
+                id: "monkeySwingers",
                 title: "Monkey Swingers",
                 description: "Monkeys ready for fun!",
                 buttons: {
@@ -1792,6 +1794,7 @@
             },
             {
                 imageName: "ms2",
+                id: "monkeySwingers2",  
                 title: "Monkey Swingers 2",
                 description: "he super swingin’ monkey is back in Monkey Swingers 2! It’s a new planet and a whole new adventure! Let’s get swinging!",
                 buttons: {
@@ -1802,6 +1805,7 @@
             },
             {
                 imageName: "bevol",
+                id: "blokshotEvolution",
                 title: "Blokshot Evolution",
                 description: "Feel the rush. A beautiful firework display of hypnotic neon destruction.",
                 url: "blokshotevolution",
@@ -1814,6 +1818,7 @@
             },
             {
                 imageName: "bc",
+                id: "blokshotChristmas",
                 title: "Blokshot Christmas",
                 description: "A winter wonderland of geometric joy for the fans of the original game.",
                 buttons: {
@@ -1825,6 +1830,7 @@
             },
             {
                 imageName: "bevil",
+                id: "blokshotEVILution",
                 title: "Blokshot EVILution",
                 description: "A ghoulishly clever Halloween treat for fans of the game.",
                 buttons: {
@@ -1835,6 +1841,7 @@
             },
             {
                 imageName: "roamingrooster",
+                id: "roamingRooster",
                 title: "Roaming Rooster",
                 description: "It is a game where you are a rooster trying to move forward in the city. There are a lot of things you have to be very careful about.",
                 buttons: {
@@ -1843,6 +1850,7 @@
             },
             {
                 imageName: "eee",
+                id: "easterEggsEscape",
                 title: "Easter Eggs Escape",
                 description: "ou over-slept, you're late, you only work one day a year and you're late",
                 buttons: {
@@ -1863,6 +1871,7 @@
             },
             {
                 imageName: "globo",
+                id: "globoRun",
                 title: "Globo Run",
                 description: "Avoid the obstacles! This is a game that I built during my second internship at ARDGRUP",
                 buttons: {
@@ -1871,6 +1880,7 @@
             },
             {
                 imageName: "solitaire",
+                id: "solitaire",
                 title: "Solitaire",
                 description: "Classic solitaire game that I built during my first internship at ARDGRUP.",
                 buttons: {
@@ -1880,6 +1890,7 @@
             },
             {
                 imageName: "speed",
+                id: "speed",
                 title: "Speed Card Game",
                 description: "It is a card game where to be victorious you have to be either fast or very lucky. You can read the rules from here.",
                 buttons: {
@@ -1890,6 +1901,7 @@
             },
             {
                 imageName: "simplerss",
+                id: "simpleRss",
                 title: "Simple RSS",
                 description: "This is the simplest RSS bot you can find. I built this app to use it personally.",
                 buttons: {
@@ -1899,6 +1911,7 @@
             },
             {
                 imageName: "vv",
+                id: "viciousVarmints",
                 title: "Vicious Varmints",
                 description: "Dang varmints! Eat yer food an' leave a mess. Gotta shoot'em all!",
                 buttons: {
@@ -1909,6 +1922,7 @@
             },
             {
                 imageName: "ketchuprush",
+                id: "ketchupRush",
                 title: "Ketchup Rush",
                 description: "You are being  by hamburgers, fries and hotdogs. In order to stop them you have to shoot them with ketchup and mustard!",
                 buttons: {
@@ -1917,6 +1931,7 @@
             },
             {
                 imageName: "roofrunner",
+                id: "roofRunner",
                 title: "Roof Runner",
                 description: "Try to avoid obstacles while grabbing as many coins as possible. If you grab too much money, you'll get caught by the police. Don't be greedy!",
                 buttons: {
@@ -1926,6 +1941,7 @@
 
             {
                 imageName: "dontmiss",
+                id: "dontMiss",
                 title: "Don't Miss",
                 description: "This is the first game I have ever developed and published. I learned a lot while trying to make it work. The goal is to reach the highest score by tapping on colored squares and not to miss!",
                 buttons: {
@@ -1934,6 +1950,7 @@
             },
             {
                 imageName: "smallgames",
+                id: "smallGames",
                 title: "Prototypes & Small Games",
                 description: "Some prototypes and small games that I have been working on/finished. You can see them here.",
                 buttons: {
@@ -1942,6 +1959,7 @@
             },
             {
                 imageName: "chastocabot",
+                id: "chastocaBot",
                 title: "Chastoca Bot",
                 description: "It is an open source Twitch chat bot that allows you to moderate your channel without using any 3rd party bots. Also you can add custom commands!",
                 buttons: {
@@ -1950,6 +1968,7 @@
             },
             {
                 imageName: "twitchLurker",
+                id: "twitchLurker",
                 title: "TwitchLurker",
                 description: "Twitch Lurker is a bot that joins to chat room of the Twitch channels you follow. It acts as a chatter and sends messages to as many channels as you wish at the same time without you needing to open up Twitch. It also lets you benefit from subscription gifts and drops as long as you leave it on.",
                 buttons: {
@@ -1958,6 +1977,7 @@
             },
             {
                 imageName: "yoklama",
+                id: "yoklamaSeysi",
                 title: "Yoklama Şeysi",
                 description: "It is an attendance tracking app that I built for me and my friends with Xamarin.",
                 buttons: {
@@ -1980,7 +2000,7 @@
 
             // Set the inner HTML of the new element with the dynamic values
             newElement.innerHTML = `
-        <div class="wrapper">
+        <div class="wrapper" id="${item.id}">
             <div class="inner" data-onvisible-trigger="1">
                 <div>
                     <div id="image02" class="style3 image"><span class="frame"><img src="assets/images/${item.imageName}.jpg" alt="" /></span></div>
