@@ -5,8 +5,18 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Solitaire</title>
+    <style>
+      #game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as per your requirement */
+}
+    </style>
   </head>
   <body style="text-align: center; background-color: #292929;">
+    <div id="game-container">
+
     <canvas id="unity-canvas" width=405 height=720 style="width: 405px; height: 720px; background: #231F20"></canvas>
     <script src="Build/5.loader.js"></script>
     <script>
@@ -22,5 +32,6 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
+    </div>
   </body>
 </html>
