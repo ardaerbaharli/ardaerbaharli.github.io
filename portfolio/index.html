@@ -1767,11 +1767,20 @@
 
         var data = [{
                 imageName: "questionmark",
-                title: "Mathletix Money",
+                title: "Mathletix Geometry",
                 description: "Next game of the Mathletix series. This time, it's all about money!",
             },
             {
-                imageName: "lwc",
+                imageLink: "https://play-lh.googleusercontent.com/G4_dUiV6GhoTXPMc-vTTNxBrQ2LCY4Kh4f-h4wjpHht6_oymunpHflBDa5sPU2yi_A=w240-h480",
+                title: "Mathletix Money",
+                description: "Introducing Mathletix Money - Ignite Financial Literacy in a Playful Way!",
+                buttons: {
+                    googlePlay: "https://play.google.com/store/apps/details?id=com.Player1Games.MathletixMoneyy",
+                    appStore: "https://apps.apple.com/us/app/mathletix-money/id6450317058",
+                }
+            },
+            {
+                imageLink: "https://play-lh.googleusercontent.com/VE1IZlbZv55RlPJcoD5t7hAbiwGwYdpvh2mgklitkQO6ESTts8GIySWKW8ws2EtY5w=w240-h480",
                 id: "linguistWordCraft",
                 title: "The Linguist: Word Craft",
                 description: "If you like word games, Word Craft is the game you've been waiting for!",
@@ -1782,7 +1791,7 @@
                 }
             },
             {
-                imageName: "ms1",
+                imageLink: "https://play-lh.googleusercontent.com/bgkIZOdSd8GgUsIj9alJt-teRnOIZ63OyKvLj9Zqonf3sDnxtzJOfiFwsdTT3aQI6A=w240-h480",
                 id: "monkeySwingers",
                 title: "Monkey Swingers",
                 description: "Monkeys ready for fun!",
@@ -1793,8 +1802,8 @@
                 }
             },
             {
-                imageName: "ms2",
-                id: "monkeySwingers2",  
+                imageLink: "https://play-lh.googleusercontent.com/TyxgxLahVkYJDFQOgAGmAY04qqg8zrMp-tmSXLRJddUFvCT78AHTIpQ75Atxp-EraVBG=w240-h480",
+                id: "monkeySwingers2",
                 title: "Monkey Swingers 2",
                 description: "he super swingin’ monkey is back in Monkey Swingers 2! It’s a new planet and a whole new adventure! Let’s get swinging!",
                 buttons: {
@@ -1804,7 +1813,7 @@
                 }
             },
             {
-                imageName: "bevol",
+                imageLink: "https://play-lh.googleusercontent.com/SmhbRpsKECT2siDiGPCqtFYBXuNBjBwhAXndj2ihliMtc5MRyKU0XmjMsrpTfCZWLtA=w240-h480",
                 id: "blokshotEvolution",
                 title: "Blokshot Evolution",
                 description: "Feel the rush. A beautiful firework display of hypnotic neon destruction.",
@@ -1817,7 +1826,7 @@
                 }
             },
             {
-                imageName: "bc",
+                imageLink: "https://play-lh.googleusercontent.com/9r95R0PsXh1nLHRDq5CL0UzmnzS2MSCA02Ile_cX6nVFhVNdL64jRR9TLPlVj8T_WBwg=w240-h480",
                 id: "blokshotChristmas",
                 title: "Blokshot Christmas",
                 description: "A winter wonderland of geometric joy for the fans of the original game.",
@@ -1829,7 +1838,7 @@
                 }
             },
             {
-                imageName: "bevil",
+                imageLink: "https://play-lh.googleusercontent.com/DcUEY4uZM3R3hrzGSNcgdx3H59GRYGLxZ-8Rd1OYoSeMopQ3BQ-YlFSa_X1YFtXjKdo=w240-h480",
                 id: "blokshotEVILution",
                 title: "Blokshot EVILution",
                 description: "A ghoulishly clever Halloween treat for fans of the game.",
@@ -1849,7 +1858,7 @@
                 }
             },
             {
-                imageName: "eee",
+                imageLink: "https://play-lh.googleusercontent.com/ktiD60K74_FZrGbikUjudTItIzEmCmqRsdKdhEhmdX6jaCf4kUqMEYh9or_agPGNMso=w240-h480",
                 id: "easterEggsEscape",
                 title: "Easter Eggs Escape",
                 description: "ou over-slept, you're late, you only work one day a year and you're late",
@@ -1910,7 +1919,7 @@
                 }
             },
             {
-                imageName: "vv",
+                imageLink: "https://play-lh.googleusercontent.com/-pgL-4tatzdq5IbJEQ_uF7Zkl6XucD-zzhaMQCBfWh-Dq-OMRcCLz-vZgNOom-M45Qw=w240-h480",
                 id: "viciousVarmints",
                 title: "Vicious Varmints",
                 description: "Dang varmints! Eat yer food an' leave a mess. Gotta shoot'em all!",
@@ -1940,7 +1949,7 @@
             },
 
             {
-                imageName: "dontmiss",
+                imageLink: "https://play-lh.googleusercontent.com/ueKiL09C9_ScICmKe7rbnK7xvrsJo3BLbasK4-R904GaBOFndqZ4C9h6m3V6Faa4Z2Sk=s48",
                 id: "dontMiss",
                 title: "Don't Miss",
                 description: "This is the first game I have ever developed and published. I learned a lot while trying to make it work. The goal is to reach the highest score by tapping on colored squares and not to miss!",
@@ -2004,7 +2013,7 @@
         <div class="wrapper" id="${item.id}">
             <div class="inner" data-onvisible-trigger="1">
                 <div>
-                    <div id="image02" class="style3 image"><span class="frame"><img src="assets/images/${item.imageName}.jpg" alt="" /></span></div>
+                    <div id="image02" class="style3 image"><span class="frame"><img src="" alt="" /></span></div>
                 </div>
                 <div>
                     <h2 id="text03" class="style4">${item.title}</h2>
@@ -2020,6 +2029,12 @@
         </div>
     `;
 
+            // Set the image source assets/images/${item.imageName}.jpg
+            if (item.hasOwnProperty("imageName")) {
+                newElement.querySelector("img").src = `assets/images/${item.imageName}.jpg`;
+            } else if (item.hasOwnProperty("imageLink")) {
+                newElement.querySelector("img").src = item.imageLink;
+            }
 
             if (item.hasOwnProperty("buttons")) {
                 // for each button in the item.buttons array, create a new li element and add it to the ul element, add the buttons by checking if the button is null or not
